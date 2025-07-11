@@ -1,0 +1,43 @@
+name: examapp
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.0
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  injectable:  
+  get_it:  
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  cupertino_icons: ^1.0.8
+  retrofit: ^4.6.0
+
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  injectable_generator:  
+  json_serializable:
+  
+  build_runner:  
+  
+  flutter_lints: ^5.0.0
+
+
+flutter:
+  
+  generate: true
+
+  
+  uses-material-design: true
+
+  
