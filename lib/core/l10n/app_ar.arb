@@ -36,7 +36,5 @@
   "userNameRequired": "اسم المستخدم مطلوب",
   "firstNameRequired":"الاسم الأول مطلوب",
   "lastNameRequired": "اسم العائلة مطلوب",
-  "emailRequired":"البريد الإلكتروني مطلوب",
   "phoneRequired": "رقم الهاتف مطلوب"
-
 }

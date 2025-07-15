@@ -8,6 +8,7 @@ import 'package:examapp/view_model/forget_password_cubit/forget_password_state.d
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+// ignore: must_be_immutable
 class ForgetPasswordScreen extends StatelessWidget {
   ForgetPasswordScreen({super.key});
   TextEditingController forgetPasswordController = TextEditingController();

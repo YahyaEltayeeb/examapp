@@ -39,7 +39,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get newPassword => 'New password';
 
   @override
-  String get enterNewPassword => 'ُEnter new Password';
+  String get enterNewPassword => 'Enter new Password';
 
   @override
   String get continueButton => 'Continue';

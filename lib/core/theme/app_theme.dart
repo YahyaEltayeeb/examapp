@@ -2,7 +2,7 @@ import 'package:examapp/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 abstract class AppTheme {
-  static getTheme({
+  static ThemeData getTheme({
     required ColorScheme colorScheme,
     required Color textFieldBorderColor,
   }) {
@@ -29,7 +29,6 @@ abstract class AppTheme {
           color: colorScheme.onPrimary,
         ),
       ),
-
       inputDecorationTheme: InputDecorationTheme(
         counterStyle: TextStyle(color: colorScheme.primary),
         helperStyle: TextStyle(
@@ -44,20 +43,14 @@ abstract class AppTheme {
           fontWeight: FontWeight.w400,
           color: textFieldBorderColor,
         ),
-
-        // Theme focusBorder
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: textFieldBorderColor),
           borderRadius: BorderRadius.circular(4),
         ),
-
-        // Theme DisableBorder
         disabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: textFieldBorderColor),
           borderRadius: BorderRadius.circular(4),
         ),
-
-        //ThemeErrorBorder
         errorBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: colorScheme.error,
@@ -65,7 +58,6 @@ abstract class AppTheme {
           ),
           borderRadius: BorderRadius.circular(4),
         ),
-        //ThemeFocusedErrorBorder
         focusedErrorBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: textFieldBorderColor,
@@ -73,8 +65,6 @@ abstract class AppTheme {
           ),
           borderRadius: BorderRadius.circular(4),
         ),
-
-        // Theme EnableBorder
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: textFieldBorderColor,
@@ -87,8 +77,8 @@ abstract class AppTheme {
   }
 
   static ThemeData lightTheme = getTheme(
-    textFieldBorderColor: Color(0xff535353),
-    colorScheme: ColorScheme(
+    textFieldBorderColor: const Color(0xff535353),
+    colorScheme: const ColorScheme(
       brightness: Brightness.light,
       primary: AppColors.blue,
       onPrimary: AppColors.white,

@@ -2,7 +2,7 @@ import 'package:examapp/core/di/di.dart';
 import 'package:examapp/core/l10n/translation/app_localizations.dart';
 import 'package:examapp/core/validation/validator.dart';
 import 'package:examapp/domain/model/request/user_request.dart';
-import 'package:examapp/view/screen/log_in_screen.dart';
+import 'package:examapp/view/screen/sign_in_screen.dart';
 import 'package:examapp/view/widget/custom_text_field.dart';
 import 'package:examapp/view_model/sign_up_cubit/sign_up_cubit.dart';
 import 'package:examapp/view_model/sign_up_cubit/sign_up_state.dart';

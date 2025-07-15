@@ -155,7 +155,7 @@ abstract class AppLocalizations {
   /// No description provided for @enterNewPassword.
   ///
   /// In en, this message translates to:
-  /// **'ُEnter new Password'**
+  /// **'Enter new Password'**
   String get enterNewPassword;
 
   /// No description provided for @continueButton.
