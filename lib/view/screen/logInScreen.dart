@@ -8,10 +8,14 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Padding(
-          padding: const EdgeInsets.all(24),
-          child: TextFormField(decoration: InputDecoration(label: Text('name')),),
-        )],
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(24),
+            child: TextFormField(
+              decoration: InputDecoration(label: Text('name')),
+            ),
+          ),
+        ],
       ),
     );
   }

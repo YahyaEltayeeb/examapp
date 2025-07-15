@@ -20,6 +20,12 @@ dependencies:
   intl: any
   cupertino_icons: ^1.0.8
   retrofit: ^4.6.0
+  dio: ^5.8.0+1
+  json_annotation: ^4.9.0
+  bloc:
+  flutter_bloc: ^9.1.1
+  pretty_dio_logger:
+  shared_preferences:
 
   
 dev_dependencies:
@@ -27,6 +33,7 @@ dev_dependencies:
     sdk: flutter
   injectable_generator:  
   json_serializable:
+  retrofit_generator:
   
   build_runner:  
   

@@ -1,0 +1,18 @@
+import 'package:examapp/data/data_source/sign_up_data_source.dart';
+import 'package:examapp/domain/model/user_request.dart';
+import 'package:examapp/domain/model/user_response.dart';
+import 'package:examapp/domain/repos/sign_up_repo.dart';
+import 'package:injectable/injectable.dart';
+
+@Injectable(as: SignUpRepo)
+class SignUpRepoImp implements SignUpRepo {
+  final SignUpDataSource _signUpDataSource;
+
+  SignUpRepoImp(this._signUpDataSource);
+  @override
+  Future<UserResponse> signUpRepo(UserRequest userRequest) async {
+    final response = await _signUpDataSource.signUpDataSource(userRequest);
+
+    return response;
+  }
+}
