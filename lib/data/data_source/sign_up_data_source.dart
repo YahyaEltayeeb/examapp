@@ -1,6 +1,6 @@
+import 'package:examapp/domain/model/sign_up_response.dart';
 import 'package:examapp/domain/model/user_request.dart';
-import 'package:examapp/domain/model/user_response.dart';
 
 abstract class SignUpDataSource {
-  Future<UserResponse> signUpDataSource(UserRequest userRequest);
+  Future<SignUpResponse> signUpDataSource(UserRequest userRequest);
 }

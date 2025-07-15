@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:examapp/core/values/api_end_point.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 @module
 abstract class ApiModule {
@@ -20,6 +19,5 @@ abstract class ApiModule {
     );
     return dio;
   }
-  @preResolve
-  Future<SharedPreferences>get prefs=>SharedPreferences.getInstance();
+  
 }
