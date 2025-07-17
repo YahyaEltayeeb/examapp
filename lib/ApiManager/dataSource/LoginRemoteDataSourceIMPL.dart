@@ -1,14 +1,13 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dartz/dartz.dart';
-import 'package:examapp/ApiService/Model/LoginRequest/LoginRequest.dart';
-
-import 'package:examapp/ApiService/Model/LoginResponse/LoginResponse.dart';
-
+import 'package:examapp/data/Model/RequestLogin.dart';
 import 'package:examapp/error/Failures.dart';
-
+import 'package:injectable/injectable.dart';
 import '../../data/dataSource/remote_datasource.dart';
-import '../ApiService.dart';
-
+import '../../domain/Model/LoginRequest/LoginRequest.dart';
+import '../../domain/Model/LoginResponse/LoginResponse.dart';
+import '../ApiService/ApiService.dart';
+@Injectable(as:LoginRemoteDataSource)
 class LoginRemoteDataSourceIMPL extends LoginRemoteDataSource{
   ApiService apiService;
   LoginRemoteDataSourceIMPL({required this.apiService});
@@ -22,11 +21,19 @@ class LoginRemoteDataSourceIMPL extends LoginRemoteDataSource{
       if (connectivityResult.contains(ConnectivityResult.wifi) ||
           connectivityResult.contains(ConnectivityResult.mobile)) {
         //todo: internet
-         var response = await apiService.login(request);
-         return  R;
+
+        final requestDto = RequestLoginDTO(
+          email: request.email,
+          password: request.password,
+        );
 
 
-        // var loginResponse = LoginResponse.fromJson(response.user);
+        final responseDto = await apiService.login(requestDto);
+        final loginResponse = responseDto.toLoginResponse();
+
+        return Right(loginResponse);
+
+
 
       } else {
         //todo : no internet connection
@@ -39,4 +46,3 @@ class LoginRemoteDataSourceIMPL extends LoginRemoteDataSource{
   }
   }
 
-}

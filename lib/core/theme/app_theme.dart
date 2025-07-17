@@ -28,7 +28,7 @@ abstract class AppTheme {
       error: AppColors.red,
       onError: AppColors.white,
       surface: AppColors.white,
-      onSurface: AppColors.blue,
+      onSurface: AppColors.black,
     ),
   );
 }

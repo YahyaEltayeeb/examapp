@@ -1,6 +1,7 @@
 import 'package:examapp/core/l10n/translation/app_localizations.dart';
 import 'package:examapp/core/route/app_routes.dart';
-import 'package:examapp/view/logInScreen.dart';
+import 'package:examapp/homescreen/homescreen.dart';
+import 'package:examapp/view/LogIn/logInScreen.dart';
 import 'package:examapp/view/signinScreen.dart' ;
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,9 @@ abstract class Routes {
 
     case AppRoutes.logIn:
       return MaterialPageRoute(builder: (_) => const LoginScreen());
+
+      case AppRoutes.Home:
+      return MaterialPageRoute(builder: (_) => const Homescreen());
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(body: Center(child: Text(AppLocalizations.of(context)!.appName))),
