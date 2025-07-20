@@ -1,10 +1,11 @@
 import 'package:examapp/core/di/di.dart';
+import 'package:examapp/core/l10n/translation/app_localizations.dart';
 import 'package:examapp/core/validation/validator.dart';
-import 'package:examapp/domain/model/user_request.dart';
-import 'package:examapp/view/screen/logInScreen.dart';
+import 'package:examapp/domain/model/request/user_request.dart';
+import 'package:examapp/view/screen/log_in_screen.dart';
 import 'package:examapp/view/widget/custom_text_field.dart';
-import 'package:examapp/view_model/sign_up_cubit.dart';
-import 'package:examapp/view_model/sign_up_state.dart';
+import 'package:examapp/view_model/sign_up_cubit/sign_up_cubit.dart';
+import 'package:examapp/view_model/sign_up_cubit/sign_up_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -61,25 +62,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
         builder: (BuildContext context, state) {
           return Scaffold(
-            appBar: AppBar(title: Text('Sign Up')),
+            appBar: AppBar(title: Text(AppLocalizations.of(context)!.signUp)),
             body: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Form(
                 key: formkey,
                 child: SingleChildScrollView(
                   child: Column(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     spacing: MediaQuery.of(context).size.height * .03,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       //userNameTextField
                       CustomTextField(
                         controller: userNameController,
-                        validator: (value) =>
-                            value!.isEmpty ? 'user name is requierd' : null,
-                        hintText: 'Enter you user name',
+                        validator: (value) => value!.isEmpty
+                            ? AppLocalizations.of(context)!.userNameRequired
+                            : null,
+                        hintText: AppLocalizations.of(context)!.enterUserName,
                         helperText: '',
-                        labelText: 'user name',
+                        labelText: AppLocalizations.of(context)!.userName,
                       ),
 
                       Row(
@@ -89,12 +90,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             //FirstNameTextField
                             child: CustomTextField(
                               validator: (value) => value!.isEmpty
-                                  ? 'First name is requierd'
+                                  ? AppLocalizations.of(
+                                      context,
+                                    )!.firstNameRequired
                                   : null,
                               controller: firstNameController,
 
-                              labelText: 'First name',
-                              hintText: 'Enter first name',
+                              labelText: AppLocalizations.of(
+                                context,
+                              )!.firstName,
+                              hintText: AppLocalizations.of(
+                                context,
+                              )!.enterFirstName,
                               helperText: '',
                             ),
                           ),
@@ -103,13 +110,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           Expanded(
                             child: CustomTextField(
                               validator: (value) => value!.isEmpty
-                                  ? 'Last name is requerd'
+                                  ? AppLocalizations.of(
+                                      context,
+                                    )!.lastNameRequired
                                   : null,
                               controller: lastNameController,
 
                               helperText: '',
-                              labelText: 'Last name',
-                              hintText: 'Enter last name',
+                              labelText: AppLocalizations.of(context)!.lastName,
+                              hintText: AppLocalizations.of(
+                                context,
+                              )!.enterLastName,
                             ),
                           ),
                         ],
@@ -123,16 +134,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               ) ||
                               value.isEmpty) {
                             return value.isEmpty
-                                ? 'Email is requierd'
-                                : 'This Email is not valid';
+                                ? AppLocalizations.of(context)!.emailRequired
+                                : AppLocalizations.of(context)!.emailInvalid;
                           }
                           return null;
                         },
                         controller: emailController,
 
                         helperText: '',
-                        labelText: 'Email',
-                        hintText: 'Enter you email',
+                        labelText: AppLocalizations.of(context)!.email,
+                        hintText: AppLocalizations.of(context)!.enterEmail,
                       ),
                       Row(
                         spacing: 5,
@@ -145,16 +156,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                         .hasMatch(value!) ||
                                     value.isEmpty) {
                                   return value.isEmpty
-                                      ? 'password is requierd'
-                                      : 'Password not valid';
+                                      ? AppLocalizations.of(
+                                          context,
+                                        )!.passwordRequired
+                                      : AppLocalizations.of(
+                                          context,
+                                        )!.passwordNotValid;
                                 }
                                 return null;
                               },
                               controller: passwordController,
 
                               helperText: '',
-                              labelText: 'Password',
-                              hintText: 'Enter passowrd',
+                              labelText: AppLocalizations.of(context)!.password,
+                              hintText: AppLocalizations.of(
+                                context,
+                              )!.enterPassword,
                             ),
                           ),
 
@@ -163,15 +180,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             child: CustomTextField(
                               validator: (value) {
                                 if (value != passwordController.text) {
-                                  return 'Password not matched';
+                                  return AppLocalizations.of(
+                                    context,
+                                  )!.passwordNotValid;
                                 }
                                 return null;
                               },
                               controller: rePasswordController,
 
                               helperText: '',
-                              labelText: 'Confirm password',
-                              hintText: 'Confirm password',
+                              labelText: AppLocalizations.of(
+                                context,
+                              )!.confirmPassword,
+                              hintText: AppLocalizations.of(
+                                context,
+                              )!.confirmPassword,
                             ),
                           ),
                         ],
@@ -182,15 +205,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                         builder: (context, value, child) {
                           return CustomTextField(
-                            validator: (value) =>
-                                value!.isEmpty ? 'Phone is requierd' : null,
+                            validator: (value) => value!.isEmpty
+                                ? AppLocalizations.of(context)!.phoneRequired
+                                : null,
                             keyboard: TextInputType.phone,
                             controller: phoneNumberController,
                             maxLength: 11,
 
                             helperText: '',
-                            labelText: 'Phone number',
-                            hintText: 'Enter phone number',
+                            labelText: AppLocalizations.of(
+                              context,
+                            )!.phoneNumber,
+                            hintText: AppLocalizations.of(
+                              context,
+                            )!.enterPhoneNumber,
 
                             counterText: "${value.text.length}/11".toString(),
                           );
@@ -214,7 +242,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           }
                         },
                         child: Text(
-                          'Sign Up',
+                          AppLocalizations.of(context)!.signUp,
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -222,8 +250,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Already have an account?'),
-                          TextButton(onPressed: () {}, child: Text('Login')),
+                          Text(
+                            AppLocalizations.of(context)!.alreadyHaveAccount,
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(AppLocalizations.of(context)!.login),
+                          ),
                         ],
                       ),
                     ],

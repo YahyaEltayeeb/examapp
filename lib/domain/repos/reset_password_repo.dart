@@ -1,0 +1,8 @@
+import 'package:examapp/domain/model/request/reset_password_request.dart';
+import 'package:examapp/domain/model/responce/reset_password_responce.dart';
+
+abstract class ResetPasswordRepo {
+  Future<ResetPasswordResponce> resetPassword(
+    ResetPasswordRequest resetPasswordRequest,
+  );
+}

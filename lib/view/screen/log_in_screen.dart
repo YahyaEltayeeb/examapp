@@ -15,7 +15,7 @@
 //         children: [
 //           Padding(
 //             padding: const EdgeInsets.all(24),
-            
+
 //             child: Text(token.getToken().toString(),style: TextStyle(color: Colors.red),)
 //           ),
 //         ],
@@ -25,6 +25,7 @@
 // }
 
 import 'package:examapp/core/di/di.dart';
+import 'package:examapp/core/route/app_routes.dart';
 import 'package:examapp/data/data_source/token_local_data_source.dart';
 import 'package:flutter/material.dart';
 
@@ -43,14 +44,17 @@ class LoginScreen extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           }
 
-          final token = snapshot.data;
-
           return Center(
             child: Padding(
               padding: const EdgeInsets.all(24),
-              child: Text(
-                token != null ? 'Token: $token' : 'No token saved',
-                style: const TextStyle(color: Colors.red),
+              child: FilledButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.forgetPassword);
+                },
+                child: Text(
+                  'go to forget password',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
           );
@@ -59,4 +63,3 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-

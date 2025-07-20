@@ -1,8 +1,8 @@
 import 'package:examapp/api/api_service.dart';
 import 'package:examapp/data/data_source/sign_up_data_source.dart';
-import 'package:examapp/data/mapper/mapper_toDto.dart';
-import 'package:examapp/domain/model/sign_up_response.dart';
-import 'package:examapp/domain/model/user_request.dart';
+import 'package:examapp/data/mapper/sign_up_mapper_toDto.dart';
+import 'package:examapp/domain/model/responce/sign_up_response.dart';
+import 'package:examapp/domain/model/request/user_request.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: SignUpDataSource)

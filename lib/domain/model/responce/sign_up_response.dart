@@ -1,4 +1,4 @@
-import 'package:examapp/domain/model/user_response.dart';
+import 'package:examapp/domain/model/responce/user_response.dart';
 
 class SignUpResponse {
   final String token;

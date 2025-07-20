@@ -12,6 +12,10 @@ abstract class AppTheme {
         style: ElevatedButton.styleFrom(foregroundColor: colorScheme.primary),
       ),
       textTheme: TextTheme(
+        titleMedium: TextStyle(
+          fontWeight: FontWeight.w500,
+          color: colorScheme.secondary,
+        ),
         bodyLarge: TextStyle(
           fontWeight: FontWeight.w400,
           color: AppColors.lightGrey,
@@ -19,6 +23,10 @@ abstract class AppTheme {
         bodySmall: TextStyle(
           fontWeight: FontWeight.w400,
           color: textFieldBorderColor,
+        ),
+        labelLarge: TextStyle(
+          fontWeight: FontWeight.w500,
+          color: colorScheme.onPrimary,
         ),
       ),
 

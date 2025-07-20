@@ -1,4 +1,4 @@
-import 'package:examapp/domain/model/user_response.dart';
+import 'package:examapp/domain/model/responce/user_response.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user_dto.g.dart';

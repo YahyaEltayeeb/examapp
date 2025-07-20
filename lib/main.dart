@@ -2,7 +2,9 @@ import 'package:examapp/core/l10n/translation/app_localizations.dart';
 import 'package:examapp/core/route/routes.dart';
 import 'package:examapp/core/theme/app_theme.dart';
 import 'package:examapp/core/di/di.dart';
-import 'package:examapp/view/screen/signUpScreen.dart';
+import 'package:examapp/view/screen/forget_password_screen.dart';
+import 'package:examapp/view/screen/sign_up_screen.dart';
+
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Routes.generateRoutes,
-      home: SignUpScreen(),
+      home: SignUpScreen()
     );
   }
 }
