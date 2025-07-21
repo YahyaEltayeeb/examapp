@@ -36,5 +36,9 @@
   "userNameRequired":"User name is required",
   "firstNameRequired":"First name is required",
   "lastNameRequired":"Last name is required",
+  "emailRequired":"Email is required",
   "phoneRequired":"Phone number is required"
+   
+
+
 }

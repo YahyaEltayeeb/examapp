@@ -28,10 +28,10 @@ abstract class ApiServices {
   );
 
   @factoryMethod
+
   @POST(ApiEndPoint.verifyCode)
   Future<void> verifyCode(@Body() VerifyCodeRequestDto verifyCodeRequestDto);
 
-  @factoryMethod
   @POST(ApiEndPoint.resetPassword)
   Future<ResetPasswordResponceDto> resetPassword(
     @Body() ResetPasswordRequestDto resetPasswordRequestDto,
@@ -39,4 +39,5 @@ abstract class ApiServices {
 
     @POST(ApiEndPoint.signInEndPoint)
   Future<ResponseLoginDTO> login(@Body() RequestLoginDTO request);
-}
+
+ }

@@ -4,7 +4,6 @@ import 'package:examapp/data/mapper/sign_up_mapper_toDto.dart';
 import 'package:examapp/domain/model/responce/sign_up_response.dart';
 import 'package:examapp/domain/model/request/user_request.dart';
 import 'package:injectable/injectable.dart';
-
 @Injectable(as: SignUpDataSource)
 class SignUpDataSourceImp implements SignUpDataSource {
   final ApiServices _apiServices;

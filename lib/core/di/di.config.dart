@@ -17,6 +17,7 @@ import 'package:shared_preferences/shared_preferences.dart' as _i460;
 import '../../api/api_service.dart' as _i578;
 import '../../api/dataSource/forget_password_data_source_imp.dart' as _i138;
 import '../../api/dataSource/reset_password_data_source_imp.dart' as _i465;
+import '../../api/dataSource/sign_in_data_source_imp.dart' as _i872;
 import '../../api/dataSource/sign_up_data_source_Imp.dart' as _i868;
 import '../../api/dataSource/token_local_data_source_imp.dart' as _i903;
 import '../../api/dataSource/verify_code_data_source_imp.dart' as _i560;
@@ -69,6 +70,10 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i903.TokenLocalDataSourceImp(gh<_i460.SharedPreferences>()),
     );
     gh.factory<_i578.ApiServices>(() => _i578.ApiServices(gh<_i361.Dio>()));
+    gh.factory<_i982.LoginRemoteDataSource>(
+      () =>
+          _i872.LoginRemoteDataSourceIMPL(apiService: gh<_i578.ApiServices>()),
+    );
     gh.factory<_i385.VerifyCodeDataSource>(
       () => _i560.VerifyCodeDataSourceImp(gh<_i578.ApiServices>()),
     );
