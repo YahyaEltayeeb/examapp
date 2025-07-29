@@ -22,7 +22,7 @@ class SignUpRepoImp implements SignUpRepo {
 
     await _tokenLocalDataSource.saveToken(response.token);
 
-    await _tokenLocalDataSource.saveToken(response.token);
+   
 
 
     return response.user;

@@ -13,35 +13,65 @@ class LoginRemoteDataSourceIMPL extends LoginRemoteDataSource{
   LoginRemoteDataSourceIMPL({required this.apiService});
 
 
-  @override
-  Future<Either<Failures, LoginResponse>> login(LoginRequest request)async {
-    try {
-      final List<ConnectivityResult> connectivityResult =
-          (await Connectivity().checkConnectivity()) as List<ConnectivityResult>;
-      if (connectivityResult.contains(ConnectivityResult.wifi) ||
-          connectivityResult.contains(ConnectivityResult.mobile)) {
-        //todo: internet
+//   @override
+//   Future<Either<Failures, LoginResponse>> login(LoginRequest request)async {
+//     try {
+//       final List<ConnectivityResult> connectivityResult =
+//           (await Connectivity().checkConnectivity()) as List<ConnectivityResult>;
+//       if (connectivityResult.contains(ConnectivityResult.wifi) ||
+//           connectivityResult.contains(ConnectivityResult.mobile)) {
+//         //todo: internet
 
-        final requestDto = RequestLoginDTO(
-          email: request.email,
-          password: request.password,
-        );
-
-
-        final responseDto = await apiService.login(requestDto);
-        final loginResponse = responseDto.toLoginResponse();
-
-        return Right(loginResponse);
+//         final requestDto = RequestLoginDTO(
+//           email: request.email,
+//           password: request.password,
+//         );
 
 
+//         final responseDto = await apiService.login(requestDto);
+//         final loginResponse = responseDto.toLoginResponse();
 
-      } else {
-        //todo : no internet connection
-        return Left(NetworkError(
-            errorMessage: 'No Internet Connection, Please Check Internet.'));
-      }
-    } catch (e) {
-      return Left(Failures(errorMessage: e.toString()));
+//         return Right(loginResponse);
+
+
+
+//       } else {
+//         //todo : no internet connection
+//         return Left(NetworkError(
+//             errorMessage: 'No Internet Connection, Please Check Internet.'));
+//       }
+//     } catch (e) {
+//       return Left(Failures(errorMessage: e.toString()));
+//     }
+//   }
+//   }
+
+
+
+
+@override
+Future<Either<Failures, LoginResponse>> login(LoginRequest request) async {
+  try {
+    final connectivityResult = await Connectivity().checkConnectivity();
+
+    if (connectivityResult == ConnectivityResult.mobile ||
+        connectivityResult == ConnectivityResult.wifi) {
+      final requestDto = RequestLoginDTO(
+        email: request.email,
+        password: request.password,
+      );
+
+      final responseDto = await apiService.login(requestDto);
+      final loginResponse = responseDto.toLoginResponse();
+
+      return Right(loginResponse);
+    } else {
+      return Left(NetworkError(
+        errorMessage: 'No Internet Connection, Please Check Internet.',
+      ));
     }
+  } catch (e) {
+    return Left(Failures(errorMessage: e.toString()));
   }
-  }
+}
+}

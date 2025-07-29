@@ -15,7 +15,7 @@ class _ApiServices implements ApiServices {
 
   String? baseUrl;
 
- // final ParseErrorLogger? errorLogger;
+//  final ParseErrorLogger? errorLogger;
 
   @override
   Future<SignupResponseDto> signUp(SignUpRequestDto signUpReequest) async {
@@ -39,7 +39,7 @@ class _ApiServices implements ApiServices {
     try {
       _value = SignupResponseDto.fromJson(_result.data!);
     } on Object catch (e, s) {
-  //    errorLogger?.logError(e, s, _options);
+     // errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;
@@ -69,7 +69,7 @@ class _ApiServices implements ApiServices {
     try {
       _value = ForgetPasswordResponceDto.fromJson(_result.data!);
     } on Object catch (e, s) {
-    //  errorLogger?.logError(e, s, _options);
+   //   errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;
@@ -119,7 +119,7 @@ class _ApiServices implements ApiServices {
     try {
       _value = ResetPasswordResponceDto.fromJson(_result.data!);
     } on Object catch (e, s) {
-   //   errorLogger?.logError(e, s, _options);
+    //  errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;
@@ -147,7 +147,88 @@ class _ApiServices implements ApiServices {
     try {
       _value = ResponseLoginDTO.fromJson(_result.data!);
     } on Object catch (e, s) {
-   //   errorLogger?.logError(e, s, _options);
+    //  errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ExamResponseDto> getAllExams() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<ExamResponseDto>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'exams',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ExamResponseDto _value;
+    try {
+      _value = ExamResponseDto.fromJson(_result.data!);
+    } on Object catch (e, s) {
+     // errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ExamResponseByIdDto> getExamsById(String id) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'id': id};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<ExamResponseByIdDto>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'exams',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ExamResponseByIdDto _value;
+    try {
+      _value = ExamResponseByIdDto.fromJson(_result.data!);
+    } on Object catch (e, s) {
+    //  errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<SubjectResponseDto> getSubject() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<SubjectResponseDto>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'subjects',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SubjectResponseDto _value;
+    try {
+      _value = SubjectResponseDto.fromJson(_result.data!);
+    } on Object catch (e, s) {
+    //  errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;

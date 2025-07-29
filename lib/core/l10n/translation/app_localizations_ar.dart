@@ -124,4 +124,31 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get phoneRequired => 'رقم الهاتف مطلوب';
+
+  @override
+  String get minutes => 'دقيقة';
+
+  @override
+  String get fixedFromToTime => 'من: ١.٠٠ إلى: ٦.٠٠';
+
+  @override
+  String get survey => 'استبيان';
+
+  @override
+  String get search => 'بحث';
+
+  @override
+  String get browseBySubject => 'تصفح حسب المادة';
+
+  @override
+  String get explore => 'استكشاف';
+
+  @override
+  String get result => 'النتيجة';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
+  String get question => 'سؤال';
 }

@@ -1,22 +1,34 @@
 import 'package:examapp/core/l10n/translation/app_localizations.dart';
+import 'package:examapp/core/route/app_routes.dart';
 import 'package:examapp/core/route/routes.dart';
 import 'package:examapp/core/theme/app_theme.dart';
 import 'package:examapp/core/di/di.dart';
-import 'package:examapp/view/screen/forget_password_screen.dart';
-import 'package:examapp/view/screen/sign_up_screen.dart';
+import 'package:examapp/data/data_source/token_local_data_source.dart';
 
 import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
-  runApp(const MyApp());
-
-
+  final tokenDataSource = getIt<TokenLocalDataSource>();
+  final token = await tokenDataSource.getToken();
+  final initialRoute = token == null ? AppRoutes.signIn : AppRoutes.home;
+  runApp(
+    SafeArea(
+      child: MyApp(
+         initialRoute: initialRoute
+      ),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   final String initialRoute;
+
+  const MyApp({
+    super.key,
+    required this.initialRoute
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +39,8 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Routes.generateRoutes,
-      home: SignUpScreen()
+      initialRoute: 
+      initialRoute,
     );
   }
 }

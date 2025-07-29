@@ -325,6 +325,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Phone number is required'**
   String get phoneRequired;
+
+  /// No description provided for @minutes.
+  ///
+  /// In en, this message translates to:
+  /// **'Minutes'**
+  String get minutes;
+
+  /// No description provided for @fixedFromToTime.
+  ///
+  /// In en, this message translates to:
+  /// **'From: 1.00 To: 6.00'**
+  String get fixedFromToTime;
+
+  /// No description provided for @survey.
+  ///
+  /// In en, this message translates to:
+  /// **'Survey'**
+  String get survey;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
+
+  /// No description provided for @browseBySubject.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse by subject'**
+  String get browseBySubject;
+
+  /// No description provided for @explore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get explore;
+
+  /// No description provided for @result.
+  ///
+  /// In en, this message translates to:
+  /// **'Result'**
+  String get result;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @question.
+  ///
+  /// In en, this message translates to:
+  /// **'Question'**
+  String get question;
 }
 
 class _AppLocalizationsDelegate

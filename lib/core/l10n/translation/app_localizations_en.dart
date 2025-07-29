@@ -124,4 +124,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get phoneRequired => 'Phone number is required';
+
+  @override
+  String get minutes => 'Minutes';
+
+  @override
+  String get fixedFromToTime => 'From: 1.00 To: 6.00';
+
+  @override
+  String get survey => 'Survey';
+
+  @override
+  String get search => 'Search';
+
+  @override
+  String get browseBySubject => 'Browse by subject';
+
+  @override
+  String get explore => 'Explore';
+
+  @override
+  String get result => 'Result';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get question => 'Question';
 }

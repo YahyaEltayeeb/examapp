@@ -73,6 +73,10 @@ abstract class AppTheme {
           borderRadius: BorderRadius.circular(4),
         ),
       ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: AppColors.lightBlue,
+      
+      ),
     );
   }
 
