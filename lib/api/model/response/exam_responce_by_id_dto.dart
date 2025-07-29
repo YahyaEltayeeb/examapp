@@ -1,5 +1,4 @@
 import 'package:examapp/api/model/response/exam_model_by_id_dto.dart';
-import 'package:examapp/api/model/response/exam_model_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'exam_responce_by_id_dto.g.dart';

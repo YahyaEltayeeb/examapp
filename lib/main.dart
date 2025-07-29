@@ -3,32 +3,18 @@ import 'package:examapp/core/route/app_routes.dart';
 import 'package:examapp/core/route/routes.dart';
 import 'package:examapp/core/theme/app_theme.dart';
 import 'package:examapp/core/di/di.dart';
-import 'package:examapp/data/data_source/token_local_data_source.dart';
 
 import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
-  final tokenDataSource = getIt<TokenLocalDataSource>();
-  final token = await tokenDataSource.getToken();
-  final initialRoute = token == null ? AppRoutes.signIn : AppRoutes.home;
-  runApp(
-    SafeArea(
-      child: MyApp(
-         initialRoute: initialRoute
-      ),
-    ),
-  );
+
+  runApp(SafeArea(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-   final String initialRoute;
-
-  const MyApp({
-    super.key,
-    required this.initialRoute
-  });
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +25,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Routes.generateRoutes,
-      initialRoute: 
-      initialRoute,
+      initialRoute: AppRoutes.logIn,
     );
   }
 }
