@@ -1,7 +1,7 @@
 import 'package:examapp/core/di/di.dart';
 import 'package:examapp/core/l10n/translation/app_localizations.dart';
 import 'package:examapp/core/route/app_routes.dart';
-import 'package:examapp/domain/model/request/forget_password_request.dart';
+import 'package:examapp/domain/Model/request/forget_password_request.dart';
 import 'package:examapp/view/widget/custom_text_field.dart';
 import 'package:examapp/view_model/forget_password_cubit/forget_password_cubit.dart';
 import 'package:examapp/view_model/forget_password_cubit/forget_password_state.dart';

@@ -11,12 +11,12 @@ class GetSubjectState {
   });
 
   GetSubjectState copyWith({
-    bool? isLoaddingGetAllExams,
+    bool? isLoaddingSubject,
     String? messageErrorSubject,
     List<SubjectModel>? subjects,
   }) {
     return GetSubjectState(
-      isLoaddingSubject: isLoaddingGetAllExams ?? isLoaddingSubject,
+      isLoaddingSubject: isLoaddingSubject ?? this.isLoaddingSubject,
       subjects: subjects ?? this.subjects,
       messageErrorSubject: messageErrorSubject ?? this.messageErrorSubject,
     );

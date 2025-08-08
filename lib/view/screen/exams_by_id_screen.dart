@@ -5,6 +5,7 @@ import 'package:examapp/core/theme/app_colors.dart';
 import 'package:examapp/core/values/arguments_value.dart';
 import 'package:examapp/core/values/assets_constant.dart';
 import 'package:examapp/view/widget/custom_card.dart';
+import 'package:examapp/view/widget/loadding_widget.dart';
 import 'package:examapp/view_model/exams_by_id_cubit/exam_by_id_bloc.dart';
 import 'package:examapp/view_model/exams_by_id_cubit/exam_by_id_event.dart';
 import 'package:examapp/view_model/exams_by_id_cubit/exam_by_id_state.dart';
@@ -21,25 +22,16 @@ class ExamsByIdScreen extends StatelessWidget {
     final arguments = args as Map<String, dynamic>;
     final id = arguments[ArgumentsValue.idArgument] as String;
     final title = arguments[ArgumentsValue.titleArgument] as String;
-
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pushNamed(context, AppRoutes.home);
-          },
-          icon: Icon(Icons.arrow_back_ios_new),
-        ),
-      ),
+      appBar: AppBar(title: Text(title), automaticallyImplyLeading: true),
       body: BlocProvider(
         create: (_) => getIt<ExamByIdBloc>()..add(GetExamsByIdEvent(id)),
         child: Expanded(
           child: BlocBuilder<ExamByIdBloc, GetExamByIdState>(
             builder: (context, state) {
               if (state.isLoadding == true) {
-                return Center(child: CircularProgressIndicator());
-              } else if (state.errorMessageId.isNotEmpty) {
+                return LoaddingWidget();
+              }  if (state.errorMessageId.isNotEmpty) {
                 return Center(child: Text(state.errorMessageId));
               }
 
@@ -49,7 +41,19 @@ class ExamsByIdScreen extends StatelessWidget {
                   return Column(
                     children: [
                       CustomCard(
-                        onTapCard: () {},
+                        onTapCard: () {
+                          Navigator.pushNamed(
+                            context,
+                            AppRoutes.question,
+                            arguments: {
+                              ArgumentsValue.examId: state.examsById[index].id,
+                              ArgumentsValue.examDuration: state
+                                  .examsById[index]
+                                  .duration
+                                  .toString(),
+                            },
+                          );
+                        },
 
                         widget: ListTile(
                           trailing: Text(

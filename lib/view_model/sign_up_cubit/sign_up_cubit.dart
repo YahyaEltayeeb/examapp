@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import 'package:examapp/domain/model/request/user_request.dart';
+import 'package:examapp/domain/Model/request/user_request.dart';
 import 'package:examapp/domain/useCase/sign_up_use_case.dart';
 import 'package:examapp/view_model/sign_up_cubit/sign_up_state.dart';
 import 'package:injectable/injectable.dart';

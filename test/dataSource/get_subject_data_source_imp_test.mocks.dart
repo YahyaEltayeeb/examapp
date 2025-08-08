@@ -3,21 +3,23 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i10;
+import 'dart:async' as _i11;
 
-import 'package:examapp/api/api_service.dart' as _i9;
-import 'package:examapp/api/model/request/forget_password_request.dart' as _i12;
-import 'package:examapp/api/model/request/reset_password_request.dart' as _i14;
-import 'package:examapp/api/model/request/sign_up_request.dart' as _i11;
-import 'package:examapp/api/model/request/verify_code_request.dart' as _i13;
+import 'package:examapp/api/api_service.dart' as _i10;
+import 'package:examapp/api/model/request/forget_password_request.dart' as _i13;
+import 'package:examapp/api/model/request/reset_password_request.dart' as _i15;
+import 'package:examapp/api/model/request/sign_up_request.dart' as _i12;
+import 'package:examapp/api/model/request/verify_code_request.dart' as _i14;
 import 'package:examapp/api/model/response/exam_responce_by_id_dto.dart' as _i7;
 import 'package:examapp/api/model/response/exam_responce_dto.dart' as _i6;
 import 'package:examapp/api/model/response/forget_password_responce_dto.dart'
     as _i3;
+import 'package:examapp/api/model/response/question_responce_model_dto.dart'
+    as _i9;
 import 'package:examapp/api/model/response/reset_password_responce.dart' as _i4;
 import 'package:examapp/api/model/response/sign_up_response_dto.dart' as _i2;
 import 'package:examapp/api/model/response/subject_responce_dto.dart' as _i8;
-import 'package:examapp/data/Model/RequestLogin.dart' as _i15;
+import 'package:examapp/data/Model/RequestLogin.dart' as _i16;
 import 'package:examapp/data/Model/ResponseLogin.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -77,116 +79,135 @@ class _FakeSubjectResponseDto_6 extends _i1.SmartFake
     : super(parent, parentInvocation);
 }
 
+class _FakeQuestionResponseModelDto_7 extends _i1.SmartFake
+    implements _i9.QuestionResponseModelDto {
+  _FakeQuestionResponseModelDto_7(Object parent, Invocation parentInvocation)
+    : super(parent, parentInvocation);
+}
+
 /// A class which mocks [ApiServices].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockApiServices extends _i1.Mock implements _i9.ApiServices {
+class MockApiServices extends _i1.Mock implements _i10.ApiServices {
   MockApiServices() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i10.Future<_i2.SignupResponseDto> signUp(
-    _i11.SignUpRequestDto? signUpReequest,
+  _i11.Future<_i2.SignupResponseDto> signUp(
+    _i12.SignUpRequestDto? signUpReequest,
   ) =>
       (super.noSuchMethod(
             Invocation.method(#signUp, [signUpReequest]),
-            returnValue: _i10.Future<_i2.SignupResponseDto>.value(
+            returnValue: _i11.Future<_i2.SignupResponseDto>.value(
               _FakeSignupResponseDto_0(
                 this,
                 Invocation.method(#signUp, [signUpReequest]),
               ),
             ),
           )
-          as _i10.Future<_i2.SignupResponseDto>);
+          as _i11.Future<_i2.SignupResponseDto>);
 
   @override
-  _i10.Future<_i3.ForgetPasswordResponceDto> forgetPassword(
-    _i12.ForgetPasswordRequestDto? forgetPasswordRequestDto,
+  _i11.Future<_i3.ForgetPasswordResponceDto> forgetPassword(
+    _i13.ForgetPasswordRequestDto? forgetPasswordRequestDto,
   ) =>
       (super.noSuchMethod(
             Invocation.method(#forgetPassword, [forgetPasswordRequestDto]),
-            returnValue: _i10.Future<_i3.ForgetPasswordResponceDto>.value(
+            returnValue: _i11.Future<_i3.ForgetPasswordResponceDto>.value(
               _FakeForgetPasswordResponceDto_1(
                 this,
                 Invocation.method(#forgetPassword, [forgetPasswordRequestDto]),
               ),
             ),
           )
-          as _i10.Future<_i3.ForgetPasswordResponceDto>);
+          as _i11.Future<_i3.ForgetPasswordResponceDto>);
 
   @override
-  _i10.Future<void> verifyCode(
-    _i13.VerifyCodeRequestDto? verifyCodeRequestDto,
+  _i11.Future<void> verifyCode(
+    _i14.VerifyCodeRequestDto? verifyCodeRequestDto,
   ) =>
       (super.noSuchMethod(
             Invocation.method(#verifyCode, [verifyCodeRequestDto]),
-            returnValue: _i10.Future<void>.value(),
-            returnValueForMissingStub: _i10.Future<void>.value(),
+            returnValue: _i11.Future<void>.value(),
+            returnValueForMissingStub: _i11.Future<void>.value(),
           )
-          as _i10.Future<void>);
+          as _i11.Future<void>);
 
   @override
-  _i10.Future<_i4.ResetPasswordResponceDto> resetPassword(
-    _i14.ResetPasswordRequestDto? resetPasswordRequestDto,
+  _i11.Future<_i4.ResetPasswordResponceDto> resetPassword(
+    _i15.ResetPasswordRequestDto? resetPasswordRequestDto,
   ) =>
       (super.noSuchMethod(
             Invocation.method(#resetPassword, [resetPasswordRequestDto]),
-            returnValue: _i10.Future<_i4.ResetPasswordResponceDto>.value(
+            returnValue: _i11.Future<_i4.ResetPasswordResponceDto>.value(
               _FakeResetPasswordResponceDto_2(
                 this,
                 Invocation.method(#resetPassword, [resetPasswordRequestDto]),
               ),
             ),
           )
-          as _i10.Future<_i4.ResetPasswordResponceDto>);
+          as _i11.Future<_i4.ResetPasswordResponceDto>);
 
   @override
-  _i10.Future<_i5.ResponseLoginDTO> login(_i15.RequestLoginDTO? request) =>
+  _i11.Future<_i5.ResponseLoginDTO> login(_i16.RequestLoginDTO? request) =>
       (super.noSuchMethod(
             Invocation.method(#login, [request]),
-            returnValue: _i10.Future<_i5.ResponseLoginDTO>.value(
+            returnValue: _i11.Future<_i5.ResponseLoginDTO>.value(
               _FakeResponseLoginDTO_3(
                 this,
                 Invocation.method(#login, [request]),
               ),
             ),
           )
-          as _i10.Future<_i5.ResponseLoginDTO>);
+          as _i11.Future<_i5.ResponseLoginDTO>);
 
   @override
-  _i10.Future<_i6.ExamResponseDto> getAllExams() =>
+  _i11.Future<_i6.ExamResponseDto> getAllExams() =>
       (super.noSuchMethod(
             Invocation.method(#getAllExams, []),
-            returnValue: _i10.Future<_i6.ExamResponseDto>.value(
+            returnValue: _i11.Future<_i6.ExamResponseDto>.value(
               _FakeExamResponseDto_4(this, Invocation.method(#getAllExams, [])),
             ),
           )
-          as _i10.Future<_i6.ExamResponseDto>);
+          as _i11.Future<_i6.ExamResponseDto>);
 
   @override
-  _i10.Future<_i7.ExamResponseByIdDto> getExamsById(String? id) =>
+  _i11.Future<_i7.ExamResponseByIdDto> getExamsById(String? id) =>
       (super.noSuchMethod(
             Invocation.method(#getExamsById, [id]),
-            returnValue: _i10.Future<_i7.ExamResponseByIdDto>.value(
+            returnValue: _i11.Future<_i7.ExamResponseByIdDto>.value(
               _FakeExamResponseByIdDto_5(
                 this,
                 Invocation.method(#getExamsById, [id]),
               ),
             ),
           )
-          as _i10.Future<_i7.ExamResponseByIdDto>);
+          as _i11.Future<_i7.ExamResponseByIdDto>);
 
   @override
-  _i10.Future<_i8.SubjectResponseDto> getSubject() =>
+  _i11.Future<_i8.SubjectResponseDto> getSubject() =>
       (super.noSuchMethod(
             Invocation.method(#getSubject, []),
-            returnValue: _i10.Future<_i8.SubjectResponseDto>.value(
+            returnValue: _i11.Future<_i8.SubjectResponseDto>.value(
               _FakeSubjectResponseDto_6(
                 this,
                 Invocation.method(#getSubject, []),
               ),
             ),
           )
-          as _i10.Future<_i8.SubjectResponseDto>);
+          as _i11.Future<_i8.SubjectResponseDto>);
+
+  @override
+  _i11.Future<_i9.QuestionResponseModelDto> getQuestions(String? examId) =>
+      (super.noSuchMethod(
+            Invocation.method(#getQuestions, [examId]),
+            returnValue: _i11.Future<_i9.QuestionResponseModelDto>.value(
+              _FakeQuestionResponseModelDto_7(
+                this,
+                Invocation.method(#getQuestions, [examId]),
+              ),
+            ),
+          )
+          as _i11.Future<_i9.QuestionResponseModelDto>);
 }

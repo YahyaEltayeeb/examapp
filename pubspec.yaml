@@ -14,6 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
   injectable:  
+  percent_indicator: ^4.2.2
   get_it:  
   flutter_localizations:
     sdk: flutter
@@ -33,6 +34,8 @@ dependencies:
   google_fonts: ^6.1.0
   mockito: ^5.4.6
   equatable: ^2.0.7
+  skeletonizer: ^2.1.0+1
+  shimmer: ^3.0.0
 
   
 dev_dependencies:

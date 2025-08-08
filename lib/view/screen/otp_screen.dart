@@ -1,6 +1,6 @@
 import 'package:examapp/core/l10n/translation/app_localizations.dart';
 import 'package:examapp/core/route/app_routes.dart';
-import 'package:examapp/domain/model/request/verify_code_request.dart';
+import 'package:examapp/domain/Model/request/verify_code_request.dart';
 import 'package:examapp/view_model/verify_code_cubit/verify_code_cubit.dart';
 import 'package:examapp/view_model/verify_code_cubit/verify_code_state.dart';
 import 'package:flutter/material.dart';

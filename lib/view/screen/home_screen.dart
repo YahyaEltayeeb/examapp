@@ -5,20 +5,23 @@ import 'package:examapp/core/theme/CustomWidget/CustomTextField.dart';
 import 'package:examapp/core/theme/app_colors.dart';
 import 'package:examapp/core/values/arguments_value.dart';
 import 'package:examapp/view/widget/custom_card.dart';
+import 'package:examapp/view/widget/loadding_widget.dart';
 import 'package:examapp/view_model/home_cubit/home_bloc.dart';
 import 'package:examapp/view_model/home_cubit/home_event.dart';
 import 'package:examapp/view_model/home_cubit/home_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skeletonizer/skeletonizer.dart';
+import 'package:shimmer/shimmer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<HomeBloc>()..add(GetSubjectEvent()),
       child: Scaffold(
-        appBar: AppBar(leading: SizedBox()),
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
@@ -45,12 +48,13 @@ class HomeScreen extends StatelessWidget {
               Expanded(
                 child: BlocBuilder<HomeBloc, GetSubjectState>(
                   builder: (context, state) {
-                    if (state.isLoaddingSubject == true) {
-                      return Center(child: CircularProgressIndicator());
-                    } else if (state.messageErrorSubject != '') {
+                    if (state.messageErrorSubject != '') {
                       return Center(
                         child: Text(state.messageErrorSubject.toString()),
                       );
+                    }
+                    if (state.isLoaddingSubject == true) {
+                      return LoaddingWidget();
                     }
 
                     return ListView.builder(
@@ -89,22 +93,6 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           ),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: AppLocalizations.of(context)!.explore,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.menu_book),
-              label: AppLocalizations.of(context)!.result,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: AppLocalizations.of(context)!.profile,
-            ),
-          ],
         ),
       ),
     );

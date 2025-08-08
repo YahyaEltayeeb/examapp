@@ -151,4 +151,46 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get question => 'Question';
+
+  @override
+  String get back => 'Back';
+
+  @override
+  String get finish => 'finish';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get pleaceChoiseAnswer => 'please choise Answer';
+
+  @override
+  String get examScore => 'Exam Score';
+
+  @override
+  String get yourScore => 'Your Score';
+
+  @override
+  String get correct => 'correct';
+
+  @override
+  String get incorrect => 'incorrect';
+
+  @override
+  String get showResult => 'ٍShow result';
+
+  @override
+  String get startAgain => 'Start Again';
+
+  @override
+  String get timeEnd => 'Time Out !';
+
+  @override
+  String get viewScore => 'View Score';
+
+  @override
+  String get exam => 'Exam';
+
+  @override
+  String get off => 'of';
 }

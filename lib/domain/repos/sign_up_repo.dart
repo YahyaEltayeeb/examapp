@@ -1,5 +1,6 @@
-import 'package:examapp/domain/model/request/user_request.dart';
-import 'package:examapp/domain/model/responce/user_response.dart';
+import 'package:examapp/domain/Model/request/user_request.dart';
+import 'package:examapp/domain/Model/responce/user_response.dart';
+
 
 abstract class SignUpRepo {
   Future<UserResponse> signUpRepo(UserRequest userRequest);

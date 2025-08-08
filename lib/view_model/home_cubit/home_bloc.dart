@@ -13,13 +13,13 @@ class HomeBloc extends Bloc<GetSubjectEvent, GetSubjectState> {
   }
 
   void _getSubject(GetSubjectEvent event, Emitter emit) async {
-    emit(state.copyWith(isLoaddingGetAllExams: true));
+    emit(state.copyWith(isLoaddingSubject: true));
     ApiResult<List<SubjectModel>> subjectList = await _getSubjectUseCase.call();
     switch (subjectList) {
       case ApiSuccessResult():
         emit(
           state.copyWith(
-            isLoaddingGetAllExams: false,
+            isLoaddingSubject: false,
             subjects: subjectList.data,
           ),
         );
@@ -27,7 +27,7 @@ class HomeBloc extends Bloc<GetSubjectEvent, GetSubjectState> {
       case ApiErrorResult():
         emit(
           state.copyWith(
-            isLoaddingGetAllExams: false,
+            isLoaddingSubject: false,
             messageErrorSubject: state.messageErrorSubject,
           ),
         );

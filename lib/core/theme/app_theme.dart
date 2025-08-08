@@ -7,6 +7,15 @@ abstract class AppTheme {
     required Color textFieldBorderColor,
   }) {
     return ThemeData(
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.transparent,
+        foregroundColor: AppColors.black,
+        titleTextStyle: TextStyle(
+          color: AppColors.black,
+          fontWeight: FontWeight.w500,
+          fontSize: 20,
+        ),
+      ),
       colorScheme: colorScheme,
       filledButtonTheme: FilledButtonThemeData(
         style: ElevatedButton.styleFrom(foregroundColor: colorScheme.primary),
@@ -75,7 +84,14 @@ abstract class AppTheme {
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: AppColors.lightBlue,
-      
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.blue,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusGeometry.circular(10),
+          ),
+        ),
       ),
     );
   }

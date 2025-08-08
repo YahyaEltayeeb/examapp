@@ -151,4 +151,46 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get question => 'سؤال';
+
+  @override
+  String get back => 'السابق';
+
+  @override
+  String get finish => 'انهاء';
+
+  @override
+  String get next => 'التالي';
+
+  @override
+  String get pleaceChoiseAnswer => 'من فضلك اختر اجابة';
+
+  @override
+  String get examScore => 'درجة الامتحان';
+
+  @override
+  String get yourScore => 'درجتك';
+
+  @override
+  String get correct => 'صحيحة';
+
+  @override
+  String get incorrect => 'الخطأ';
+
+  @override
+  String get showResult => 'عرض النتيجة';
+
+  @override
+  String get startAgain => 'البدا مره اخري';
+
+  @override
+  String get timeEnd => 'Time Out !';
+
+  @override
+  String get viewScore => 'النتيجة';
+
+  @override
+  String get exam => 'الامتحان';
+
+  @override
+  String get off => 'من';
 }

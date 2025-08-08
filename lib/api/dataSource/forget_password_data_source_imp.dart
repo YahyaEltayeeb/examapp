@@ -1,9 +1,10 @@
-import 'package:examapp/api/api_service.dart';
-import 'package:examapp/data/data_source/forget_password_data_source.dart';
-import 'package:examapp/data/mapper/sign_up_mapper_toDto.dart';
-import 'package:examapp/domain/model/request/forget_password_request.dart';
-import 'package:examapp/domain/model/responce/forget_password_responce.dart';
+import '../../data/data_source/forget_password_data_source.dart';
+import '../../data/mapper/sign_up_mapper_toDto.dart';
+import '../../domain/Model/request/forget_password_request.dart';
+import '../../domain/Model/responce/forget_password_responce.dart';
+import '../api_service.dart';
 import 'package:injectable/injectable.dart';
+
 @Injectable(as: ForgetPasswordDataSource)
 class ForgetPasswordDataSourceImp implements ForgetPasswordDataSource {
   final ApiServices _apiServices;
