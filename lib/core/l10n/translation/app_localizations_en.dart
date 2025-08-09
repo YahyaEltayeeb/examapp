@@ -133,4 +133,73 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get update => 'Update';
+
+  @override
+  String get minutes => 'Minutes';
+
+  @override
+  String get fixedFromToTime => 'From: 1.00 To: 6.00';
+
+  @override
+  String get survey => 'Survey';
+
+  @override
+  String get search => 'Search';
+
+  @override
+  String get browseBySubject => 'Browse by subject';
+
+  @override
+  String get explore => 'Explore';
+
+  @override
+  String get result => 'Result';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get question => 'Question';
+
+  @override
+  String get back => 'Back';
+
+  @override
+  String get finish => 'finish';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get pleaceChoiseAnswer => 'please choise Answer';
+
+  @override
+  String get examScore => 'Exam Score';
+
+  @override
+  String get yourScore => 'Your Score';
+
+  @override
+  String get correct => 'correct';
+
+  @override
+  String get incorrect => 'incorrect';
+
+  @override
+  String get showResult => 'ٍShow result';
+
+  @override
+  String get startAgain => 'Start Again';
+
+  @override
+  String get timeEnd => 'Time Out !';
+
+  @override
+  String get viewScore => 'View Score';
+
+  @override
+  String get exam => 'Exam';
+
+  @override
+  String get off => 'of';
 }

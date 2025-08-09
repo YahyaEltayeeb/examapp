@@ -7,4 +7,12 @@ abstract class ApiEndPoint {
   static const String resetPassword='resetPassword';
   static const String examBySub='exams?subject=670037f6728c92b7fdf434fc';
   static const String profile='auth/editProfile';
+  static const String signInEndPoint = 'auth/signin';
+  static const String forgetPAsswordEndPoint = 'auth/forgotPassword';
+  static const String verifyCode = 'verifyResetCode';
+  static const String resetPassword = 'resetPassword';
+  static const String getAllExams = 'exams';
+  static const String getExamsById = 'exams';
+  static const String getSubject = 'subjects';
+  static const String getQuetionsByExamId='questions';
 }

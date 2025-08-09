@@ -1,4 +1,4 @@
-{
+{ "@@locale": "ar",
   "helloWorld": "صباح الخير",
   "appName": "امتحانات اونلاين",
   "forgetPassword": "نسيان كلمة المرور",
@@ -44,4 +44,27 @@
 
 
 
+  "phoneRequired": "رقم الهاتف مطلوب",
+  "minutes":"دقيقة",
+  "fixedFromToTime": "من: ١.٠٠ إلى: ٦.٠٠",
+  "survey": "استبيان",
+  "search": "بحث",
+  "browseBySubject": "تصفح حسب المادة",
+  "explore": "استكشاف",
+  "result": "النتيجة",
+  "profile": "الملف الشخصي",
+  "question": "سؤال",
+  "back":"السابق",
+  "finish":"انهاء",
+  "next":"التالي",
+  "pleaceChoiseAnswer":"من فضلك اختر اجابة",
+  "examScore":"درجة الامتحان",
+  "yourScore":"درجتك",
+  "correct":"صحيحة",
+  "incorrect":"الخطأ",
+  "showResult":"عرض النتيجة",
+  "startAgain":"البدا مره اخري",
+  "viewScore":"النتيجة",
+  "exam":"الامتحان",
+  "off":"من"
 }

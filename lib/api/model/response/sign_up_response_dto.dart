@@ -1,5 +1,5 @@
 import 'package:examapp/api/model/user_dto.dart';
-import 'package:examapp/domain/model/responce/sign_up_response.dart';
+import 'package:examapp/domain/Model/responce/sign_up_response.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'sign_up_response_dto.g.dart';

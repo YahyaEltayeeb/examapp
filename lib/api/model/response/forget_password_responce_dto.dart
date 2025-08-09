@@ -1,4 +1,4 @@
-import 'package:examapp/domain/model/responce/forget_password_responce.dart';
+import 'package:examapp/domain/Model/responce/forget_password_responce.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'forget_password_responce_dto.g.dart';

@@ -1,7 +1,8 @@
 import 'package:examapp/api/model/request/forget_password_request.dart';
 import 'package:examapp/api/model/request/sign_up_request.dart';
-import 'package:examapp/domain/model/request/forget_password_request.dart';
-import 'package:examapp/domain/model/request/user_request.dart';
+import 'package:examapp/domain/Model/request/forget_password_request.dart';
+import 'package:examapp/domain/Model/request/user_request.dart';
+
 
  SignUpRequestDto convertUserRequestToDto(UserRequest userRequest) {
   return SignUpRequestDto(

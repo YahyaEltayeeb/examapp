@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:examapp/domain/model/request/verify_code_request.dart';
+import 'package:examapp/domain/Model/request/verify_code_request.dart';
 import 'package:examapp/domain/useCase/verify_code_use_case.dart';
 import 'package:examapp/view_model/verify_code_cubit/verify_code_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

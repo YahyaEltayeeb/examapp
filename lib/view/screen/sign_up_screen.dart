@@ -1,8 +1,8 @@
 import 'package:examapp/core/di/di.dart';
 import 'package:examapp/core/l10n/translation/app_localizations.dart';
+import 'package:examapp/core/route/app_routes.dart';
 import 'package:examapp/core/validation/validator.dart';
-import 'package:examapp/domain/model/request/user_request.dart';
-import 'package:examapp/view/screen/sign_in_screen.dart';
+import 'package:examapp/domain/Model/request/user_request.dart';
 import 'package:examapp/view/widget/custom_text_field.dart';
 import 'package:examapp/view_model/sign_up_cubit/sign_up_cubit.dart';
 import 'package:examapp/view_model/sign_up_cubit/sign_up_state.dart';
@@ -46,9 +46,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       child: BlocConsumer<SignUpCubit, SignUpState>(
         listener: (context, state) {
           if (state is SignUpSuccess) {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (_) => const LoginScreen()),
-            );
+            Navigator.pushNamed(context, AppRoutes.logIn);
           } else if (state is SignUpError) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
@@ -220,7 +218,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               context,
                             )!.enterPhoneNumber,
 
-                            counterText: "${value.text.length}/11".toString(),
+                            counterText: '${value.text.length}/11'.toString(),
                           );
                         },
                       ),

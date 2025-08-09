@@ -31,10 +31,8 @@ class LoginRemoteDataSourceIMPL extends LoginRemoteDataSource{
 
         final responseDto = await apiService.login(requestDto);
         final loginResponse = responseDto.toLoginResponse();
-
-        // final prefs = await SharedPreferences.getInstance();
-        // await prefs.setString('token', loginResponse.token ?? '');
         final prefs = await SharedPreferences.getInstance();
+
         if (loginResponse.token != null && loginResponse.token!.isNotEmpty) {
           await prefs.setString('token', loginResponse.token!);
           print('Token saved: ${loginResponse.token}');
@@ -43,17 +41,19 @@ class LoginRemoteDataSourceIMPL extends LoginRemoteDataSource{
           print('No token to save, removed old token.');
         }
 
-        return Right(loginResponse);
-
-
-
-      } else {
-        //todo : no internet connection
-        return Left(NetworkError(
-            errorMessage: 'No Internet Connection, Please Check Internet.'));
-      }
-    } catch (e) {
-      return Left(Failures(errorMessage: e.toString()));
+      return Right(loginResponse);
+    } else {
+      return Left(NetworkError(
+        errorMessage: 'No Internet Connection, Please Check Internet.',
+      ));
     }
+  } catch (e) {
+    return Left(Failures(errorMessage: e.toString()));
   }
-  }
+}
+}
+        // final prefs = await SharedPreferences.getInstance();
+        // await prefs.setString('token', loginResponse.token ?? '');
+
+
+

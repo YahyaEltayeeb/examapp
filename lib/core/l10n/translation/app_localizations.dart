@@ -332,6 +332,144 @@ abstract class AppLocalizations {
   /// **'Phone number is required'**
   String get phoneRequired;
 
+  /// No description provided for @minutes.
+  ///
+  /// In en, this message translates to:
+  /// **'Minutes'**
+  String get minutes;
+
+  /// No description provided for @fixedFromToTime.
+  ///
+  /// In en, this message translates to:
+  /// **'From: 1.00 To: 6.00'**
+  String get fixedFromToTime;
+
+  /// No description provided for @survey.
+  ///
+  /// In en, this message translates to:
+  /// **'Survey'**
+  String get survey;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
+
+  /// No description provided for @browseBySubject.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse by subject'**
+  String get browseBySubject;
+
+  /// No description provided for @explore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get explore;
+
+  /// No description provided for @result.
+  ///
+  /// In en, this message translates to:
+  /// **'Result'**
+  String get result;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @question.
+  ///
+  /// In en, this message translates to:
+  /// **'Question'**
+  String get question;
+
+  /// No description provided for @back.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get back;
+
+  /// No description provided for @finish.
+  ///
+  /// In en, this message translates to:
+  /// **'finish'**
+  String get finish;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// No description provided for @pleaceChoiseAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'please choise Answer'**
+  String get pleaceChoiseAnswer;
+
+  /// No description provided for @examScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Exam Score'**
+  String get examScore;
+
+  /// No description provided for @yourScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Score'**
+  String get yourScore;
+
+  /// No description provided for @correct.
+  ///
+  /// In en, this message translates to:
+  /// **'correct'**
+  String get correct;
+
+  /// No description provided for @incorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'incorrect'**
+  String get incorrect;
+
+  /// No description provided for @showResult.
+  ///
+  /// In en, this message translates to:
+  /// **'ٍShow result'**
+  String get showResult;
+
+  /// No description provided for @startAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Again'**
+  String get startAgain;
+
+  /// No description provided for @timeEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'Time Out !'**
+  String get timeEnd;
+
+  /// No description provided for @viewScore.
+  ///
+  /// In en, this message translates to:
+  /// **'View Score'**
+  String get viewScore;
+
+  /// No description provided for @exam.
+  ///
+  /// In en, this message translates to:
+  /// **'Exam'**
+  String get exam;
+
+  /// No description provided for @off.
+  ///
+  /// In en, this message translates to:
+  /// **'of'**
+  String get off;
+
   /// No description provided for @profile.
   ///
   /// In en, this message translates to:

@@ -1,7 +1,7 @@
 import 'package:examapp/data/data_source/reset_password_data_source.dart';
 import 'package:examapp/data/mapper/reset_password_mapper_toDto.dart';
-import 'package:examapp/domain/model/request/reset_password_request.dart';
-import 'package:examapp/domain/model/responce/reset_password_responce.dart';
+import 'package:examapp/domain/Model/request/reset_password_request.dart';
+import 'package:examapp/domain/Model/responce/reset_password_responce.dart';
 import 'package:examapp/domain/repos/reset_password_repo.dart';
 import 'package:injectable/injectable.dart';
 @Injectable(as: ResetPasswordRepo)

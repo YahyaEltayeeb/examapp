@@ -1,6 +1,7 @@
 import 'package:examapp/data/data_source/forget_password_data_source.dart';
-import 'package:examapp/domain/model/request/forget_password_request.dart';
-import 'package:examapp/domain/model/responce/forget_password_responce.dart';
+import 'package:examapp/domain/Model/request/forget_password_request.dart';
+import 'package:examapp/domain/Model/responce/forget_password_responce.dart';
+
 import 'package:examapp/domain/repos/forget_password_repo.dart';
 import 'package:injectable/injectable.dart';
 @Injectable(as: ForgetPasswordRepo)

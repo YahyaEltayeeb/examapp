@@ -129,6 +129,75 @@ class AppLocalizationsAr extends AppLocalizations {
   String get phoneRequired => 'رقم الهاتف مطلوب';
 
   @override
+  String get minutes => 'دقيقة';
+
+  @override
+  String get fixedFromToTime => 'من: ١.٠٠ إلى: ٦.٠٠';
+
+  @override
+  String get survey => 'استبيان';
+
+  @override
+  String get search => 'بحث';
+
+  @override
+  String get browseBySubject => 'تصفح حسب المادة';
+
+  @override
+  String get explore => 'استكشاف';
+
+  @override
+  String get result => 'النتيجة';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
+  String get question => 'سؤال';
+
+  @override
+  String get back => 'السابق';
+
+  @override
+  String get finish => 'انهاء';
+
+  @override
+  String get next => 'التالي';
+
+  @override
+  String get pleaceChoiseAnswer => 'من فضلك اختر اجابة';
+
+  @override
+  String get examScore => 'درجة الامتحان';
+
+  @override
+  String get yourScore => 'درجتك';
+
+  @override
+  String get correct => 'صحيحة';
+
+  @override
+  String get incorrect => 'الخطأ';
+
+  @override
+  String get showResult => 'عرض النتيجة';
+
+  @override
+  String get startAgain => 'البدا مره اخري';
+
+  @override
+  String get timeEnd => 'Time Out !';
+
+  @override
+  String get viewScore => 'النتيجة';
+
+  @override
+  String get exam => 'الامتحان';
+
+  @override
+  String get off => 'من';
+
+  @override
   String get profile => 'بروفايل';
 
   @override

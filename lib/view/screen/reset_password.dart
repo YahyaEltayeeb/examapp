@@ -2,7 +2,7 @@ import 'package:examapp/core/di/di.dart';
 import 'package:examapp/core/l10n/translation/app_localizations.dart';
 import 'package:examapp/core/route/app_routes.dart';
 import 'package:examapp/core/validation/validator.dart';
-import 'package:examapp/domain/model/request/reset_password_request.dart';
+import 'package:examapp/domain/Model/request/reset_password_request.dart';
 import 'package:examapp/view_model/reset_password_cubit/reset_password_cubit.dart';
 import 'package:examapp/view_model/reset_password_cubit/reset_password_state.dart';
 import 'package:flutter/material.dart';

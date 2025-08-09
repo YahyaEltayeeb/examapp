@@ -1,4 +1,4 @@
-import 'package:examapp/domain/model/request/verify_code_request.dart';
+import 'package:examapp/domain/Model/request/verify_code_request.dart';
 import 'package:examapp/domain/repos/verify_code_repo.dart';
 import 'package:injectable/injectable.dart';
 
