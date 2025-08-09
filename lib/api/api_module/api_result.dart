@@ -8,6 +8,7 @@ class ApiSuccessResult<T> extends ApiResult<T>{
 class ApiErrorResult<T> extends ApiResult<T> {
   final String errorMessage;
   final int? errorCode;
+
   ApiErrorResult({
     required this.errorMessage,
     this.errorCode,
