@@ -5,4 +5,6 @@ abstract class ApiEndPoint {
   static const String forgetPAsswordEndPoint='auth/forgotPassword';
   static const String verifyCode='verifyResetCode';
   static const String resetPassword='resetPassword';
+  static const String examBySub='exams?subject=670037f6728c92b7fdf434fc';
+  static const String profile='auth/editProfile';
 }

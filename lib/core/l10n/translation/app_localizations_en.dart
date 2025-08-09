@@ -114,6 +114,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get passwordNotValid => 'Password not valid';
 
   @override
+  String get passwordNotMatch => 'Passwords do not match';
+
+  @override
   String get userNameRequired => 'User name is required';
 
   @override
@@ -124,4 +127,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get phoneRequired => 'Phone number is required';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get update => 'Update';
 }

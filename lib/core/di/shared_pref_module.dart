@@ -6,5 +6,9 @@ abstract class SharedPrefModule {
   @preResolve
   Future<SharedPreferences> provideSharedPreference() async {
     return await SharedPreferences.getInstance();
+
+
+
   }
+
 }

@@ -2,7 +2,7 @@ abstract class ForgetPasswordState {}
 
 class ForgetPasswordInitial extends ForgetPasswordState {}
 
-class ForgetPasswordLoadding extends ForgetPasswordState {}
+class ForgetPasswordLoading extends ForgetPasswordState {}
 
 class ForgetPasswordError extends ForgetPasswordState {
   String message;

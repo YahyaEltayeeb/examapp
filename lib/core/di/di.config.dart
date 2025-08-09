@@ -15,33 +15,46 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
 import '../../api/api_service.dart' as _i578;
+import '../../api/dataSource/exam/get_exam_by_sub_dataSourceImpl.dart' as _i869;
 import '../../api/dataSource/forget_password_data_source_imp.dart' as _i138;
+import '../../api/dataSource/profile/edit_profile_data_source_imp.dart'
+    as _i1030;
 import '../../api/dataSource/reset_password_data_source_imp.dart' as _i465;
 import '../../api/dataSource/sign_in_data_source_imp.dart' as _i872;
 import '../../api/dataSource/sign_up_data_source_Imp.dart' as _i868;
 import '../../api/dataSource/token_local_data_source_imp.dart' as _i903;
 import '../../api/dataSource/verify_code_data_source_imp.dart' as _i560;
+import '../../data/data_source/exam/get_exam_sub_datasource.dart' as _i318;
 import '../../data/data_source/forget_password_data_source.dart' as _i185;
+import '../../data/data_source/profile/edit_profile_data_source.dart' as _i1005;
 import '../../data/data_source/reset_password_data_source.dart' as _i1052;
 import '../../data/data_source/sign_in_data_source.dart' as _i982;
 import '../../data/data_source/sign_up_data_source.dart' as _i383;
 import '../../data/data_source/token_local_data_source.dart' as _i505;
 import '../../data/data_source/verify_code_data_source.dart' as _i385;
+import '../../data/repos/exam/get_exam_by_sub_repoImpl.dart' as _i1061;
 import '../../data/repos/forget_password_repo_imp.dart' as _i391;
+import '../../data/repos/profile/edit_profile_repo_imp.dart' as _i178;
 import '../../data/repos/reset_password_repo_imp.dart' as _i945;
 import '../../data/repos/sign_in_repo_imp.dart' as _i513;
 import '../../data/repos/sign_up_repo_Imp.dart' as _i1013;
 import '../../data/repos/verify_code_repo_imp.dart' as _i626;
 import '../../domain/repo.dart' as _i732;
+import '../../domain/repos/exam/exam_by_sub_repo.dart' as _i928;
 import '../../domain/repos/forget_password_repo.dart' as _i333;
+import '../../domain/repos/profile/edit_profile_repo.dart' as _i595;
 import '../../domain/repos/reset_password_repo.dart' as _i846;
 import '../../domain/repos/sign_up_repo.dart' as _i274;
 import '../../domain/repos/verify_code_repo.dart' as _i1011;
+import '../../domain/useCase/edit_profile_use_case.dart' as _i235;
+import '../../domain/useCase/exam/exam_by_sub_usecase.dart' as _i665;
 import '../../domain/useCase/forget_password_use_case.dart' as _i749;
 import '../../domain/useCase/reset_password_use_case.dart' as _i1;
 import '../../domain/useCase/sign_up_use_case.dart' as _i276;
 import '../../domain/useCase/verify_code_use_case.dart' as _i869;
 import '../../UseCase/LoginUseCase.dart' as _i1070;
+import '../../view_model/edit_profile_cubit/edit_profile_cubit.dart' as _i933;
+import '../../view_model/exam/exam_by_sub_cubit.dart' as _i488;
 import '../../view_model/forget_password_cubit/forget_password_cubit.dart'
     as _i112;
 import '../../view_model/reset_password_cubit/reset_password_cubit.dart'
@@ -65,9 +78,11 @@ extension GetItInjectableX on _i174.GetIt {
       () => sharedPrefModule.provideSharedPreference(),
       preResolve: true,
     );
-    gh.singleton<_i361.Dio>(() => apiModule.dioProvider());
     gh.factory<_i505.TokenLocalDataSource>(
       () => _i903.TokenLocalDataSourceImp(gh<_i460.SharedPreferences>()),
+    );
+    gh.singleton<_i361.Dio>(
+      () => apiModule.dioProvider(gh<_i460.SharedPreferences>()),
     );
     gh.factory<_i578.ApiServices>(() => _i578.ApiServices(gh<_i361.Dio>()));
     gh.factory<_i982.LoginRemoteDataSource>(
@@ -88,10 +103,25 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i185.ForgetPasswordDataSource>(
       () => _i138.ForgetPasswordDataSourceImp(gh<_i578.ApiServices>()),
     );
+    gh.factory<_i928.ExamBySubRepo>(
+      () => _i1061.ExamBySubRepoImpl(apiServices: gh<_i578.ApiServices>()),
+    );
+    gh.factory<_i318.ExamBySubDataSource>(
+      () => _i869.ExamBySubDataSourceImpl(apiServices: gh<_i578.ApiServices>()),
+    );
+    gh.factory<_i665.ExamBySubUseCase>(
+      () => _i665.ExamBySubUseCase(examBySubRepo: gh<_i928.ExamBySubRepo>()),
+    );
     gh.factory<_i274.SignUpRepo>(
       () => _i1013.SignUpRepoImp(
         gh<_i383.SignUpDataSource>(),
         gh<_i505.TokenLocalDataSource>(),
+      ),
+    );
+    gh.factory<_i1005.EditProfileDataSource>(
+      () => _i1030.EditProfileDataSourceImpl(
+        gh<_i578.ApiServices>(),
+        gh<_i460.SharedPreferences>(),
       ),
     );
     gh.factory<_i333.ForgetPasswordRepo>(
@@ -99,6 +129,11 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i1052.ResetPasswordDataSource>(
       () => _i465.ResetPasswordDataSourceImp(gh<_i578.ApiServices>()),
+    );
+    gh.factory<_i488.ExamBySubViewModel>(
+      () => _i488.ExamBySubViewModel(
+        examBySubUseCase: gh<_i665.ExamBySubUseCase>(),
+      ),
     );
     gh.factory<_i846.ResetPasswordRepo>(
       () => _i945.ResetPasswordRepoImp(gh<_i1052.ResetPasswordDataSource>()),
@@ -118,6 +153,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i276.SignUpUseCase>(
       () => _i276.SignUpUseCase(gh<_i274.SignUpRepo>()),
     );
+    gh.factory<_i595.EditProfileRepo>(
+      () => _i178.EditProfileRepoImpl(gh<_i1005.EditProfileDataSource>()),
+    );
     gh.factory<_i1070.LoginUseCase>(
       () => _i1070.LoginUseCase(loginRepo: gh<_i732.LoginRepo>()),
     );
@@ -133,8 +171,16 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i936.LoginCubit>(
       () => _i936.LoginCubit(gh<_i1070.LoginUseCase>()),
     );
+    gh.factory<_i235.EditProfileUseCase>(
+      () => _i235.EditProfileUseCase(gh<_i595.EditProfileRepo>()),
+    );
     gh.factory<_i503.VerifyCodeCubit>(
       () => _i503.VerifyCodeCubit(gh<_i869.VerifyCodeUseCase>()),
+    );
+    gh.factory<_i933.EditProfileCubit>(
+      () => _i933.EditProfileCubit(
+        editProfileUseCase: gh<_i235.EditProfileUseCase>(),
+      ),
     );
     return this;
   }

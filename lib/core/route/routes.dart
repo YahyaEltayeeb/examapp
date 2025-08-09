@@ -10,6 +10,8 @@ import 'package:examapp/view_model/verify_code_cubit/verify_code_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../view/screen/exam/exam_by_sub.dart';
+
 
 abstract class Routes {
   static Route generateRoutes(RouteSettings setting) {
@@ -17,12 +19,14 @@ abstract class Routes {
     switch (url.path) {
       case AppRoutes.signIn:
         return MaterialPageRoute(builder: (_) => SignUpScreen());
+        case AppRoutes.examBySub:
+        return MaterialPageRoute(builder: (_) => ExamBySubView());
 
       case AppRoutes.logIn:
         return MaterialPageRoute(builder: (_) =>  LoginScreen());
 
-      case AppRoutes.forgetPassword:
-        return MaterialPageRoute(builder: (_) => ForgetPasswordScreen());
+      // case AppRoutes.forgetPassword:
+      //   return MaterialPageRoute(builder: (_) => ForgetPasswordScreen());
 
          case AppRoutes.home:
       return MaterialPageRoute(builder: (_) => const HomeScreen());

@@ -9,13 +9,13 @@ part of 'api_service.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations,unused_element_parameter
 
 class _ApiServices implements ApiServices {
-  _ApiServices(this._dio, {this.baseUrl,});
+  _ApiServices(this._dio, {this.baseUrl, this.errorLogger});
 
   final Dio _dio;
 
   String? baseUrl;
 
- // final ParseErrorLogger? errorLogger;
+  final ParseErrorLogger? errorLogger;
 
   @override
   Future<SignupResponseDto> signUp(SignUpRequestDto signUpReequest) async {
@@ -39,7 +39,7 @@ class _ApiServices implements ApiServices {
     try {
       _value = SignupResponseDto.fromJson(_result.data!);
     } on Object catch (e, s) {
-  //    errorLogger?.logError(e, s, _options);
+      errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;
@@ -69,7 +69,7 @@ class _ApiServices implements ApiServices {
     try {
       _value = ForgetPasswordResponceDto.fromJson(_result.data!);
     } on Object catch (e, s) {
-    //  errorLogger?.logError(e, s, _options);
+      errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;
@@ -119,7 +119,7 @@ class _ApiServices implements ApiServices {
     try {
       _value = ResetPasswordResponceDto.fromJson(_result.data!);
     } on Object catch (e, s) {
-   //   errorLogger?.logError(e, s, _options);
+      errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;
@@ -147,7 +147,75 @@ class _ApiServices implements ApiServices {
     try {
       _value = ResponseLoginDTO.fromJson(_result.data!);
     } on Object catch (e, s) {
-   //   errorLogger?.logError(e, s, _options);
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ExamBySubDto> getExamsBySubject(
+    String subject,
+    int? page,
+    int? limit,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'subject': subject,
+      r'page': page,
+      r'limit': limit,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<ExamBySubDto>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'exams?subject=670037f6728c92b7fdf434fc',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ExamBySubDto _value;
+    try {
+      _value = ExamBySubDto.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ProfileDto> editProfile(
+    UserProfileDto userProfileDto,
+    String token,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'token': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    _data.addAll(userProfileDto.toJson());
+    final _options = _setStreamType<ProfileDto>(
+      Options(method: 'PUT', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'auth/editProfile',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ProfileDto _value;
+    try {
+      _value = ProfileDto.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;

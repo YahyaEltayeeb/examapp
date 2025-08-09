@@ -15,7 +15,7 @@ class ForgetPasswordResponceDto {
 
   Map<String, dynamic> toJson() => _$ForgetPasswordResponceDtoToJson(this);
 
-  ForgetPasswordResponce toDomain (ForgetPasswordResponceDto forgetPasswordRequestDto){
-    return ForgetPasswordResponce(message: forgetPasswordRequestDto.message);
+  ForgetPasswordResponce toDomain(){
+    return ForgetPasswordResponce(message: message);
   }
 }

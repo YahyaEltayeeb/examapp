@@ -14,7 +14,7 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) => UserDto(
   phone: json['phone'] as String,
   role: json['role'] as String,
   isVerified: json['isVerified'] as bool,
-  id: json['_id'] as String,
+  id: json['id'] as String,
   createdAt: json['createdAt'] as String,
 );
 
@@ -26,6 +26,6 @@ Map<String, dynamic> _$UserDtoToJson(UserDto instance) => <String, dynamic>{
   'phone': instance.phone,
   'role': instance.role,
   'isVerified': instance.isVerified,
-  '_id': instance.id,
+  'id': instance.id,
   'createdAt': instance.createdAt,
 };

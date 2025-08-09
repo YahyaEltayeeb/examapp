@@ -33,12 +33,15 @@
   "invalidCode": "Invalid code",
   "passwordRequired":"Password is required",
   "passwordNotValid":"Password not valid",
+  "passwordNotMatch":"Passwords do not match",
   "userNameRequired":"User name is required",
   "firstNameRequired":"First name is required",
   "lastNameRequired":"Last name is required",
   "emailRequired":"Email is required",
-  "phoneRequired":"Phone number is required"
-   
+  "phoneRequired":"Phone number is required",
+  "profile":"Profile",
+  "update":"Update"
+
 
 
 }

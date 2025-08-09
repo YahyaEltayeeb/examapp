@@ -5,6 +5,7 @@ import 'package:examapp/core/error/Failures.dart';
 import 'package:examapp/data/Model/RequestLogin.dart';
 import 'package:examapp/data/data_source/sign_in_data_source.dart';
 import 'package:injectable/injectable.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../domain/Model/LoginRequest/LoginRequest.dart';
 import '../../domain/Model/LoginResponse/LoginResponse.dart';
 @Injectable(as:LoginRemoteDataSource)
@@ -30,6 +31,17 @@ class LoginRemoteDataSourceIMPL extends LoginRemoteDataSource{
 
         final responseDto = await apiService.login(requestDto);
         final loginResponse = responseDto.toLoginResponse();
+
+        // final prefs = await SharedPreferences.getInstance();
+        // await prefs.setString('token', loginResponse.token ?? '');
+        final prefs = await SharedPreferences.getInstance();
+        if (loginResponse.token != null && loginResponse.token!.isNotEmpty) {
+          await prefs.setString('token', loginResponse.token!);
+          print('Token saved: ${loginResponse.token}');
+        } else {
+          await prefs.remove('token');
+          print('No token to save, removed old token.');
+        }
 
         return Right(loginResponse);
 

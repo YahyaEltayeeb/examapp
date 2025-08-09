@@ -114,6 +114,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get passwordNotValid => 'كلمة المرور غير صالحة';
 
   @override
+  String get passwordNotMatch => 'كلمات المرور غير متطابقة';
+
+  @override
   String get userNameRequired => 'اسم المستخدم مطلوب';
 
   @override
@@ -124,4 +127,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get phoneRequired => 'رقم الهاتف مطلوب';
+
+  @override
+  String get profile => 'بروفايل';
+
+  @override
+  String get update => 'تحديث';
 }

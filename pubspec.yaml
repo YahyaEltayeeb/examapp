@@ -31,6 +31,7 @@ dependencies:
   dartz: ^0.10.1
   connectivity_plus: ^5.0.2
   google_fonts: ^6.1.0
+  mockito: ^5.4.6
 
   
 dev_dependencies:
