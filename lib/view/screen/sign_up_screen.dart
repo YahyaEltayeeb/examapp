@@ -60,7 +60,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
         builder: (BuildContext context, state) {
           return Scaffold(
-            appBar: AppBar(title: Text(AppLocalizations.of(context)!.signUp)),
+            appBar: AppBar(
+              title: Text(AppLocalizations.of(context)!.signUp),
+              automaticallyImplyLeading: false,
+            ),
             body: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Form(
@@ -252,7 +255,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             AppLocalizations.of(context)!.alreadyHaveAccount,
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, AppRoutes.logIn);
+                            },
                             child: Text(AppLocalizations.of(context)!.login),
                           ),
                         ],

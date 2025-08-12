@@ -11,7 +11,7 @@ void main() async {
   await configureDependencies();
   final tokenDataSource = getIt<TokenLocalDataSource>();
   final token = await tokenDataSource.getToken();
-  final initialRoute = token == null ? AppRoutes.signIn : AppRoutes.homeInitial;
+  final initialRoute = token == null ? AppRoutes.signUp : AppRoutes.homeInitial;
   runApp(SafeArea(child: MyApp(initialRoute: initialRoute)));
 }
 
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.lightTheme,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: Routes.generateRoutes,
-        initialRoute: initialRoute,
+        initialRoute: AppRoutes.signUp,
 
         // home: QuestionScreen(),
       ),

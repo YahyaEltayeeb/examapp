@@ -20,7 +20,7 @@ abstract class Routes {
   static Route generateRoutes(RouteSettings setting) {
     final url = Uri.parse(setting.name ?? '/');
     switch (url.path) {
-      case AppRoutes.signIn:
+      case AppRoutes.signUp:
         return MaterialPageRoute(builder: (_) => SignUpScreen());
 
       case AppRoutes.logIn:

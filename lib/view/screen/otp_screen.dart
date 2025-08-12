@@ -71,7 +71,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       ),
                     );
                   } else if (state is VerifyCodeSuccess) {
-                    Navigator.pushNamed(context, AppRoutes.signIn);
+                    Navigator.pushNamed(context, AppRoutes.signUp);
                   }
                 },
                 child: BlocBuilder<VerifyCodeCubit, VerifyCodeState>(
