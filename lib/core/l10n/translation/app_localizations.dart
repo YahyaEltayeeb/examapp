@@ -470,12 +470,6 @@ abstract class AppLocalizations {
   /// **'of'**
   String get off;
 
-  /// No description provided for @profile.
-  ///
-  /// In en, this message translates to:
-  /// **'Profile'**
-  String get profile;
-
   /// No description provided for @update.
   ///
   /// In en, this message translates to:

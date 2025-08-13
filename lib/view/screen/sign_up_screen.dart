@@ -252,7 +252,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             AppLocalizations.of(context)!.alreadyHaveAccount,
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, AppRoutes.logIn);
+                            },
                             child: Text(AppLocalizations.of(context)!.login),
                           ),
                         ],

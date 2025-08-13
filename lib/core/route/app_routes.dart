@@ -11,6 +11,5 @@ abstract class AppRoutes {
   static const String homeInitial='/homeInitial';
   static const String resultQuestion='/resultQuestion';
 
-  static const String home='/Home';
   static const String examBySub='/examBySub';
 }

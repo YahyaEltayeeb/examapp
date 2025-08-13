@@ -20,7 +20,7 @@ abstract class ApiModule {
         responseHeader: true,
       ),
     );
-    dio.interceptors.add(interceptor);
+     // dio.interceptors.add(interceptor);
     return dio;
   }
   

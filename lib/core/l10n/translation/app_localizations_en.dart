@@ -129,12 +129,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get phoneRequired => 'Phone number is required';
 
   @override
-  String get profile => 'Profile';
-
-  @override
-  String get update => 'Update';
-
-  @override
   String get minutes => 'Minutes';
 
   @override
@@ -202,4 +196,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get off => 'of';
+
+  @override
+  String get update => 'Update';
 }

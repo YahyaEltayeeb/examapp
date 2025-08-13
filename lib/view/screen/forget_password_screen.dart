@@ -114,7 +114,7 @@ class ForgetPasswordScreen extends StatelessWidget {
         appBar: AppBar(title: Text(AppLocalizations.of(context)!.password)),
         body: BlocListener<ForgetPasswordCubit, ForgetPasswordState>(
           listener: (context, state) {
-            if (state is ForgetPasswordLoadding) {
+            if (state is ForgetPasswordLoading) {
               Center(child: CircularProgressIndicator());
             } else if (state is ForgetPasswordError) {
               ScaffoldMessenger.of(context).showSnackBar(

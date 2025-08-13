@@ -40,10 +40,7 @@
   "emailRequired":"البريد الإلكتروني مطلوب",
   "phoneRequired": "رقم الهاتف مطلوب",
   "profile":"بروفايل",
-  "update":"تحديث"
-
-
-
+  "update":"تحديث",
   "phoneRequired": "رقم الهاتف مطلوب",
   "minutes":"دقيقة",
   "fixedFromToTime": "من: ١.٠٠ إلى: ٦.٠٠",

@@ -1,13 +1,12 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dartz/dartz.dart';
-import 'package:examapp/api/api_service.dart';
-import 'package:examapp/core/error/Failures.dart';
 import 'package:examapp/data/Model/RequestLogin.dart';
-import 'package:examapp/data/data_source/sign_in_data_source.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import '../../core/error/Failures.dart';
+import '../../data/data_source/sign_in_data_source.dart';
 import '../../domain/Model/LoginRequest/LoginRequest.dart';
 import '../../domain/Model/LoginResponse/LoginResponse.dart';
+import '../api_service.dart';
 @Injectable(as:LoginRemoteDataSource)
 class LoginRemoteDataSourceIMPL extends LoginRemoteDataSource{
   ApiServices apiService;
@@ -18,7 +17,7 @@ class LoginRemoteDataSourceIMPL extends LoginRemoteDataSource{
   Future<Either<Failures, LoginResponse>> login(LoginRequest request)async {
     try {
       final List<ConnectivityResult> connectivityResult =
-          (await Connectivity().checkConnectivity()) as List<ConnectivityResult>;
+      await Connectivity().checkConnectivity();
       if (connectivityResult.contains(ConnectivityResult.wifi) ||
           connectivityResult.contains(ConnectivityResult.mobile)) {
         //todo: internet
@@ -31,29 +30,18 @@ class LoginRemoteDataSourceIMPL extends LoginRemoteDataSource{
 
         final responseDto = await apiService.login(requestDto);
         final loginResponse = responseDto.toLoginResponse();
-        final prefs = await SharedPreferences.getInstance();
 
-        if (loginResponse.token != null && loginResponse.token!.isNotEmpty) {
-          await prefs.setString('token', loginResponse.token!);
-          print('Token saved: ${loginResponse.token}');
-        } else {
-          await prefs.remove('token');
-          print('No token to save, removed old token.');
-        }
+        return Right(loginResponse);
 
-      return Right(loginResponse);
-    } else {
-      return Left(NetworkError(
-        errorMessage: 'No Internet Connection, Please Check Internet.',
-      ));
+
+
+      } else {
+        //todo : no internet connection
+        return Left(NetworkError(
+            errorMessage: 'No Internet Connection, Please Check Internet.'));
+      }
+    } catch (e) {
+      return Left(Failures(errorMessage: e.toString()));
     }
-  } catch (e) {
-    return Left(Failures(errorMessage: e.toString()));
   }
 }
-}
-        // final prefs = await SharedPreferences.getInstance();
-        // await prefs.setString('token', loginResponse.token ?? '');
-
-
-

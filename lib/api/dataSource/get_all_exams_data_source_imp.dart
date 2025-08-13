@@ -3,6 +3,8 @@ import 'package:examapp/api/model/response/exam_model_dto.dart';
 import 'package:examapp/data/data_source/get_all_exams_data_source.dart';
 import 'package:injectable/injectable.dart';
 
+import '../api_service.dart';
+
 
 @Injectable(as: GetAllExamsDataSource)
 class GetAllExamsDataSourceImp implements GetAllExamsDataSource {

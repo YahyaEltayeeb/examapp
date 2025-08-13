@@ -198,8 +198,5 @@ class AppLocalizationsAr extends AppLocalizations {
   String get off => 'من';
 
   @override
-  String get profile => 'بروفايل';
-
-  @override
   String get update => 'تحديث';
 }

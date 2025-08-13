@@ -30,12 +30,12 @@ dependencies:
   pinput:
   pin_code_fields: ^8.0.1
   dartz: ^0.10.1
-  connectivity_plus: ^5.0.2
   google_fonts: ^6.1.0
   mockito: ^5.4.6
   equatable: ^2.0.7
   skeletonizer: ^2.1.0+1
   shimmer: ^3.0.0
+  connectivity_plus: ^6.1.4
 
   
 dev_dependencies:
