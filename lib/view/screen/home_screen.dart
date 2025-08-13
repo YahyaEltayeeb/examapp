@@ -11,8 +11,6 @@ import 'package:examapp/view_model/home_cubit/home_event.dart';
 import 'package:examapp/view_model/home_cubit/home_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skeletonizer/skeletonizer.dart';
-import 'package:shimmer/shimmer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
