@@ -15,6 +15,7 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
 import '../../api/api_service.dart' as _i578;
+import '../../api/dataSource/exam_by_sub_data_source_imp.dart' as _i907;
 import '../../api/dataSource/exam_result_local_data_source_imp.dart' as _i793;
 import '../../api/dataSource/forget_password_data_source_imp.dart' as _i138;
 import '../../api/dataSource/get_all_exams_data_source_imp.dart' as _i594;
@@ -27,6 +28,7 @@ import '../../api/dataSource/sign_up_data_source_Imp.dart' as _i868;
 import '../../api/dataSource/token_local_data_source_imp.dart' as _i903;
 import '../../api/dataSource/verify_code_data_source_imp.dart' as _i560;
 import '../../api/interceptor/auth_interceptor.dart' as _i409;
+import '../../data/data_source/exam_by_sub_data_source.dart' as _i536;
 import '../../data/data_source/exam_result_local_data_source.dart' as _i212;
 import '../../data/data_source/forget_password_data_source.dart' as _i185;
 import '../../data/data_source/get_all_exams_data_source.dart' as _i613;
@@ -39,6 +41,7 @@ import '../../data/data_source/sign_in_data_source.dart' as _i982;
 import '../../data/data_source/sign_up_data_source.dart' as _i383;
 import '../../data/data_source/token_local_data_source.dart' as _i505;
 import '../../data/data_source/verify_code_data_source.dart' as _i385;
+import '../../data/repos/exam_by_sub_repo_imp.dart' as _i111;
 import '../../data/repos/exam_result_local_repo_imp.dart' as _i80;
 import '../../data/repos/forget_password_repo_imp.dart' as _i391;
 import '../../data/repos/get_all_exam_repo_imp.dart' as _i408;
@@ -50,6 +53,7 @@ import '../../data/repos/sign_in_repo_imp.dart' as _i513;
 import '../../data/repos/sign_up_repo_Imp.dart' as _i1013;
 import '../../data/repos/verify_code_repo_imp.dart' as _i626;
 import '../../domain/repo.dart' as _i732;
+import '../../domain/repos/exam_by_sub_repo.dart' as _i116;
 import '../../domain/repos/exam_result_local_repo.dart' as _i788;
 import '../../domain/repos/forget_password_repo.dart' as _i333;
 import '../../domain/repos/get_all_exams_repo.dart' as _i693;
@@ -59,6 +63,7 @@ import '../../domain/repos/get_subject_repo.dart' as _i368;
 import '../../domain/repos/reset_password_repo.dart' as _i846;
 import '../../domain/repos/sign_up_repo.dart' as _i274;
 import '../../domain/repos/verify_code_repo.dart' as _i1011;
+import '../../domain/useCase/exam_by_sub_use_case.dart' as _i370;
 import '../../domain/useCase/forget_password_use_case.dart' as _i749;
 import '../../domain/useCase/get_all_exams_use_case.dart' as _i877;
 import '../../domain/useCase/get_exam_result_use_case.dart' as _i234;
@@ -70,6 +75,7 @@ import '../../domain/useCase/reset_password_use_case.dart' as _i1;
 import '../../domain/useCase/save_exam_result_use_case.dart' as _i1060;
 import '../../domain/useCase/sign_up_use_case.dart' as _i276;
 import '../../domain/useCase/verify_code_use_case.dart' as _i869;
+import '../../view_model/exam_by_sub_bloc.dart/exam_by_sub_bloc.dart' as _i170;
 import '../../view_model/exams_by_id_cubit/exam_by_id_bloc.dart' as _i731;
 import '../../view_model/forget_password_cubit/forget_password_cubit.dart'
     as _i112;
@@ -159,6 +165,9 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i505.TokenLocalDataSource>(),
       ),
     );
+    gh.factory<_i536.ExamBySubDataSource>(
+      () => _i907.ExamBySubDataSourceImp(gh<_i578.ApiServices>()),
+    );
     gh.factory<_i333.ForgetPasswordRepo>(
       () => _i391.ForgetPasswordRepoImp(gh<_i185.ForgetPasswordDataSource>()),
     );
@@ -182,6 +191,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i399.ResetPasswordCubit>(
       () => _i399.ResetPasswordCubit(gh<_i1.ResetPasswordUseCase>()),
+    );
+    gh.factory<_i116.ExamBySubRepo>(
+      () => _i111.ExamBySubRepoImp(gh<_i536.ExamBySubDataSource>()),
     );
     gh.factory<_i1011.VerifyCodeRepo>(
       () => _i626.VerifyCodeRepoImp(gh<_i385.VerifyCodeDataSource>()),
@@ -207,11 +219,17 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i55.LoginUseCase>(
       () => _i55.LoginUseCase(loginRepo: gh<_i732.LoginRepo>()),
     );
+    gh.factory<_i370.ExamBySubUseCase>(
+      () => _i370.ExamBySubUseCase(gh<_i116.ExamBySubRepo>()),
+    );
     gh.factory<_i636.SignUpCubit>(
       () => _i636.SignUpCubit(gh<_i276.SignUpUseCase>()),
     );
     gh.factory<_i345.GetQuestionBloc>(
       () => _i345.GetQuestionBloc(gh<_i572.GetQuestionUseCase>()),
+    );
+    gh.factory<_i170.ExamBySubBloc>(
+      () => _i170.ExamBySubBloc(gh<_i370.ExamBySubUseCase>()),
     );
     gh.factory<_i368.GetSubjectRepo>(
       () => _i393.GetSubjectRepoImp(gh<_i888.GetSubjectsDataSource>()),

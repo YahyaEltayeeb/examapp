@@ -11,4 +11,5 @@ abstract class ArgumentsValue {
   static const String answer = 'answer';
   static const String questionId = 'questionId';
   static const String message = 'message';
+  static const String examSub = 'examSub';
 }

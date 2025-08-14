@@ -29,10 +29,10 @@ class MyApp extends StatelessWidget {
         supportedLocales: AppLocalizations.supportedLocales,
         theme: AppTheme.lightTheme,
         debugShowCheckedModeBanner: false,
+
         onGenerateRoute: Routes.generateRoutes,
         initialRoute: AppRoutes.signUp,
-
-        // home: QuestionScreen(),
+        // home: ExamBySubScreen(),
       ),
     );
   }

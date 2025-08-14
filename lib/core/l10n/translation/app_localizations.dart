@@ -463,6 +463,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'of'**
   String get off;
+
+  /// No description provided for @guideline_read_carefully.
+  ///
+  /// In en, this message translates to:
+  /// **'Read each question with care before answering it'**
+  String get guideline_read_carefully;
+
+  /// No description provided for @guideline_start_with_known.
+  ///
+  /// In en, this message translates to:
+  /// **'Start with questions you know, then do the rest'**
+  String get guideline_start_with_known;
+
+  /// No description provided for @guideline_use_time_wisely.
+  ///
+  /// In en, this message translates to:
+  /// **'Use your time wisely and avoid rushing answers'**
+  String get guideline_use_time_wisely;
+
+  /// No description provided for @guideline_check_answers.
+  ///
+  /// In en, this message translates to:
+  /// **'Check all your answers carefully before you submit'**
+  String get guideline_check_answers;
+
+  /// No description provided for @high_level.
+  ///
+  /// In en, this message translates to:
+  /// **'High level'**
+  String get high_level;
+
+  /// No description provided for @instructions.
+  ///
+  /// In en, this message translates to:
+  /// **'Instructions'**
+  String get instructions;
+
+  /// No description provided for @start.
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get start;
 }
 
 class _AppLocalizationsDelegate

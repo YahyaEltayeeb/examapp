@@ -3,6 +3,7 @@ import 'package:examapp/api/model/request/forget_password_request.dart';
 import 'package:examapp/api/model/request/reset_password_request.dart';
 import 'package:examapp/api/model/request/sign_up_request.dart';
 import 'package:examapp/api/model/request/verify_code_request.dart';
+import 'package:examapp/api/model/response/exam_model_responce_by_sub_dto.dart';
 import 'package:examapp/api/model/response/exam_responce_by_id_dto.dart';
 import 'package:examapp/api/model/response/exam_responce_dto.dart';
 import 'package:examapp/api/model/response/forget_password_responce_dto.dart';
@@ -53,4 +54,8 @@ abstract class ApiServices {
 
   @GET(ApiEndPoint.getQuetionsByExamId)
   Future<QuestionResponseModelDto> getQuestions(@Query('exam') String examId);
+  @GET(ApiEndPoint.getExamBySub)
+  Future<ResponceModelExamBySubDto> getExamBySub(
+    @Query('subject') String examSub,
+  );
 }

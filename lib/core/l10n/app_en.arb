@@ -60,5 +60,12 @@
   "timeEnd":"Time Out !",
   "viewScore":"View Score",
   "exam":"Exam",
-  "off":"of"
+  "off":"of",
+  "guideline_read_carefully": "Read each question with care before answering it",
+  "guideline_start_with_known": "Start with questions you know, then do the rest",
+  "guideline_use_time_wisely": "Use your time wisely and avoid rushing answers",
+  "guideline_check_answers": "Check all your answers carefully before you submit",
+  "high_level": "High level",
+  "instructions": "Instructions",
+  "start":"Start"
 }

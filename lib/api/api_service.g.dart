@@ -261,6 +261,33 @@ class _ApiServices implements ApiServices {
     return _value;
   }
 
+  @override
+  Future<ResponceModelExamBySubDto> getExamBySub(String examSub) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'subject': examSub};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<ResponceModelExamBySubDto>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'exams',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ResponceModelExamBySubDto _value;
+    try {
+      _value = ResponceModelExamBySubDto.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

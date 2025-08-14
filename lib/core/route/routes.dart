@@ -1,6 +1,7 @@
 import 'package:examapp/core/di/di.dart';
 import 'package:examapp/core/l10n/translation/app_localizations.dart';
 import 'package:examapp/core/route/app_routes.dart';
+import 'package:examapp/view/screen/exam_by_sub_screen.dart';
 import 'package:examapp/view/screen/exams_by_id_screen.dart';
 import 'package:examapp/view/screen/forget_password_screen.dart';
 import 'package:examapp/view/screen/home_initial_screen%20.dart';
@@ -47,6 +48,11 @@ abstract class Routes {
             child: const OtpScreen(),
           ),
         );
+      case AppRoutes.examBySub:
+        return MaterialPageRoute(
+          builder: (_) => const ExamBySubScreen(),
+          settings: setting,
+        );
       case AppRoutes.question:
         return MaterialPageRoute(
           builder: (_) => const QuestionScreen(),
@@ -58,11 +64,17 @@ abstract class Routes {
           settings: setting,
         );
       case AppRoutes.result:
-        return MaterialPageRoute(builder: (_) => const ResultScreen(),settings: setting);
+        return MaterialPageRoute(
+          builder: (_) => const ResultScreen(),
+          settings: setting,
+        );
       case AppRoutes.homeInitial:
         return MaterialPageRoute(builder: (_) => HomeInitialScreen());
       case AppRoutes.resultQuestion:
-        return MaterialPageRoute(builder: (_) => const ResultQuestionScreen(),settings: setting);
+        return MaterialPageRoute(
+          builder: (_) => const ResultQuestionScreen(),
+          settings: setting,
+        );
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(

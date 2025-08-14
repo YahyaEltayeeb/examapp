@@ -8,5 +8,6 @@ abstract class ApiEndPoint {
   static const String getAllExams = 'exams';
   static const String getExamsById = 'exams';
   static const String getSubject = 'subjects';
-  static const String getQuetionsByExamId='questions';
+  static const String getQuetionsByExamId = 'questions';
+  static const String getExamBySub = 'exams';
 }

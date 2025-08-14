@@ -44,13 +44,9 @@ class ExamsByIdScreen extends StatelessWidget {
                         onTapCard: () {
                           Navigator.pushNamed(
                             context,
-                            AppRoutes.question,
+                            AppRoutes.examBySub,
                             arguments: {
-                              ArgumentsValue.examId: state.examsById[index].id,
-                              ArgumentsValue.examDuration: state
-                                  .examsById[index]
-                                  .duration
-                                  .toString(),
+                            ArgumentsValue.examSub:state.examsById[index].subject
                             },
                           );
                         },

@@ -193,4 +193,29 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get off => 'of';
+
+  @override
+  String get guideline_read_carefully =>
+      'Read each question with care before answering it';
+
+  @override
+  String get guideline_start_with_known =>
+      'Start with questions you know, then do the rest';
+
+  @override
+  String get guideline_use_time_wisely =>
+      'Use your time wisely and avoid rushing answers';
+
+  @override
+  String get guideline_check_answers =>
+      'Check all your answers carefully before you submit';
+
+  @override
+  String get high_level => 'High level';
+
+  @override
+  String get instructions => 'Instructions';
+
+  @override
+  String get start => 'Start';
 }

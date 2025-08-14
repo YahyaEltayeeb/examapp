@@ -59,5 +59,12 @@
   "startAgain":"البدا مره اخري",
   "viewScore":"النتيجة",
   "exam":"الامتحان",
-  "off":"من"
+  "off":"من",
+  "guideline_read_carefully": "اقرأ كل سؤال بعناية قبل الإجابة عليه",
+  "guideline_start_with_known": "ابدأ بالأسئلة التي تعرفها ثم أكمل الباقي",
+  "guideline_use_time_wisely": "استخدم وقتك بحكمة وتجنب التسرع في الإجابات",
+  "guideline_check_answers": "راجع جميع إجاباتك بعناية قبل الإرسال",
+  "high_level": "المستوى العالي",
+  "instructions": "التعليمات",
+  "start":"ابدا"
 }

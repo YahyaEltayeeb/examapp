@@ -193,4 +193,27 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get off => 'من';
+
+  @override
+  String get guideline_read_carefully => 'اقرأ كل سؤال بعناية قبل الإجابة عليه';
+
+  @override
+  String get guideline_start_with_known =>
+      'ابدأ بالأسئلة التي تعرفها ثم أكمل الباقي';
+
+  @override
+  String get guideline_use_time_wisely =>
+      'استخدم وقتك بحكمة وتجنب التسرع في الإجابات';
+
+  @override
+  String get guideline_check_answers => 'راجع جميع إجاباتك بعناية قبل الإرسال';
+
+  @override
+  String get high_level => 'المستوى العالي';
+
+  @override
+  String get instructions => 'التعليمات';
+
+  @override
+  String get start => 'ابدا';
 }
