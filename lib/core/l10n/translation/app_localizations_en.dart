@@ -218,4 +218,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get start => 'Start';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get upDate => 'Update';
+
+  @override
+  String get change => 'Change';
 }

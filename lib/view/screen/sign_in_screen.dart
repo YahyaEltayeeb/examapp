@@ -6,7 +6,6 @@ import 'package:examapp/view_model/sign_in_cubit/Logincubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../core/theme/AppStyles.dart';
-import '../../core/theme/CustomWidget/CustomButtom.dart';
 import '../../core/theme/CustomWidget/CustomTextField.dart';
 import '../../core/theme/app_colors.dart';
 import '../../domain/Model/LoginRequest/LoginRequest.dart';
@@ -31,9 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
           if (state is LoginSuccess) {
-            Navigator.pushNamed(context, AppRoutes.home,);
-            
-        
+            Navigator.pushNamed(context, AppRoutes.homeInitial);
           } else if (state is LoginError) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
@@ -100,22 +97,28 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(height: 16),
                       RememberMeWidget(),
                       SizedBox(height: 48),
-                      CustomButton(
-                        text: AppLocalizations.of(context)!.login,
-
-                        onButtonClicked: () {
-                          if (_formKey.currentState!.validate()) {
-                            final request = LoginRequest(
-                              email: emailController.text.trim(),
-                              password: passwordController.text.trim(),
-                            );
-                            BlocProvider.of<LoginCubit>(context).login(request);
-                          }
-                        
-                        },
-
-                        buttonColor: AppColors.blue,
-                        textStyle: AppStyles.medium18White,
+                      SizedBox(
+                        width: double.infinity,
+                        child: FilledButton(
+                          onPressed: state is LoginLoading
+                              ? null
+                              : () {
+                                  if (_formKey.currentState!.validate()) {
+                                    final request = LoginRequest(
+                                      email: emailController.text.trim(),
+                                      password: passwordController.text.trim(),
+                                    );
+                                    BlocProvider.of<LoginCubit>(
+                                      context,
+                                    ).login(request);
+                                  }
+                                },
+                          child: Text(
+                            AppLocalizations.of(context)!.login,
+                            style: Theme.of(context).textTheme.bodyMedium!
+                                .copyWith(color: Colors.white),
+                          ),
+                        ),
                       ),
                     ],
                   ),

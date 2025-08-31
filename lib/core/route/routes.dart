@@ -1,6 +1,7 @@
-import 'package:examapp/core/di/di.dart';
 import 'package:examapp/core/l10n/translation/app_localizations.dart';
 import 'package:examapp/core/route/app_routes.dart';
+import 'package:examapp/view/screen/change_password_screen.dart';
+import 'package:examapp/view/screen/edit_profile_screen.dart';
 import 'package:examapp/view/screen/exam_by_sub_screen.dart';
 import 'package:examapp/view/screen/exams_by_id_screen.dart';
 import 'package:examapp/view/screen/forget_password_screen.dart';
@@ -8,14 +9,13 @@ import 'package:examapp/view/screen/home_initial_screen%20.dart';
 import 'package:examapp/view/screen/home_screen.dart';
 import 'package:examapp/view/screen/otp_screen.dart';
 import 'package:examapp/view/screen/question_screen.dart';
+import 'package:examapp/view/screen/reset_password.dart';
 import 'package:examapp/view/screen/result_question_screen.dart';
 import 'package:examapp/view/screen/result_screen.dart';
 import 'package:examapp/view/screen/score_screen.dart';
 import 'package:examapp/view/screen/sign_in_screen.dart';
 import 'package:examapp/view/screen/sign_up_screen.dart';
-import 'package:examapp/view_model/verify_code_cubit/verify_code_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 abstract class Routes {
   static Route generateRoutes(RouteSettings setting) {
@@ -26,6 +26,8 @@ abstract class Routes {
 
       case AppRoutes.logIn:
         return MaterialPageRoute(builder: (_) => LoginScreen());
+      case AppRoutes.resetPassword:
+        return MaterialPageRoute(builder: (_) => const ResetPasswordScreen());
 
       case AppRoutes.forgetPassword:
         return MaterialPageRoute(builder: (_) => ForgetPasswordScreen());
@@ -43,10 +45,7 @@ abstract class Routes {
 
       case AppRoutes.otp:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (_) => getIt<VerifyCodeCubit>(),
-            child: const OtpScreen(),
-          ),
+          builder: (_) => OtpScreen()
         );
       case AppRoutes.examBySub:
         return MaterialPageRoute(
@@ -68,6 +67,11 @@ abstract class Routes {
           builder: (_) => const ResultScreen(),
           settings: setting,
         );
+      case AppRoutes.editProfile:
+        return MaterialPageRoute(
+          builder: (_) => const EditProfileScreen(),
+          settings: setting,
+        );
       case AppRoutes.homeInitial:
         return MaterialPageRoute(builder: (_) => HomeInitialScreen());
       case AppRoutes.resultQuestion:
@@ -75,6 +79,8 @@ abstract class Routes {
           builder: (_) => const ResultQuestionScreen(),
           settings: setting,
         );
+      case AppRoutes.changePassword:
+        return MaterialPageRoute(builder: (_) => const ChangePasswordScreen());
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(

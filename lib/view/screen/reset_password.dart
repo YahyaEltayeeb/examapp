@@ -26,13 +26,11 @@ class ResetPasswordScreen extends StatelessWidget {
             key: key,
             child: BlocListener<ResetPasswordCubit, ResetPasswordState>(
               listener: (context, state) {
-                if (state is ResetPasswordLoadding) {
-                  Center(child: CircularProgressIndicator());
-                } else if (state is ResetPasswordError) {
+                 if (state is ResetPasswordError) {
                   ScaffoldMessenger.of(
                     context,
                   ).showSnackBar(SnackBar(content: Text(state.messageError)));
-                } else if (state is ResetPasswordSuccess) {
+                }  if (state is ResetPasswordSuccess) {
                   Navigator.pushNamed(context, AppRoutes.logIn);
                 }
               },
@@ -79,12 +77,12 @@ class ResetPasswordScreen extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: FilledButton(
-                          onPressed: () {
+                          onPressed:state is ResetPasswordLoadding?null: () {
                             if (key.currentState!.validate()) {
                               context.read<ResetPasswordCubit>().resetPassword(
                                 ResetPasswordRequest(
-                                  emailController.text,
-                                  newPasswordController.text,
+                                 email:  emailController.text,
+                                 newPassword:  newPasswordController.text.toString(),
                                 ),
                               );
                             }

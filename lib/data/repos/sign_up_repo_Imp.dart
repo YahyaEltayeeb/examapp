@@ -3,8 +3,6 @@ import 'package:examapp/data/data_source/token_local_data_source.dart';
 import 'package:examapp/domain/Model/request/user_request.dart';
 import 'package:examapp/domain/Model/responce/user_response.dart';
 
-
-
 import 'package:examapp/domain/repos/sign_up_repo.dart';
 import 'package:injectable/injectable.dart';
 
@@ -19,10 +17,6 @@ class SignUpRepoImp implements SignUpRepo {
     final response = await _signUpDataSource.signUpDataSource(userRequest);
 
     await _tokenLocalDataSource.saveToken(response.token);
-
-   
-
-
     return response.user;
   }
 }

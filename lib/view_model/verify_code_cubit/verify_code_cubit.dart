@@ -13,9 +13,15 @@ class VerifyCodeCubit extends Cubit<VerifyCodeState> {
   VerifyCodeCubit(this._verifyCodeUseCase) : super(VerifyCodeInitial());
 
   Future<void> verifyOtp(VerifyCodeRequest verifyCodeRequest) async {
-    emit(VerifyCodeLoadding());
+    emit(VerifyCodeLoading());
     try {
-      emit(VerifyCodeSuccess());
+      final responce=await _verifyCodeUseCase.call(verifyCodeRequest);
+       if (responce.status == 'Success') {
+        emit(VerifyCodeSuccess());
+      } else {
+        emit(VerifyCodeError('Verification failed'));
+      }
+
     } on DioException catch (e) {
       final String messageError = e.response!.data['message'];
 

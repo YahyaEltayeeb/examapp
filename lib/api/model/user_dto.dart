@@ -12,7 +12,7 @@ class UserDto {
   final String phone;
   final String role;
   final bool isVerified;
-  @JsonKey(name: "_id")
+  @JsonKey(name: '_id')
   final String id;
   final String createdAt;
 

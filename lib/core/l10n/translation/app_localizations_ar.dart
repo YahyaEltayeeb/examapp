@@ -216,4 +216,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get start => 'ابدا';
+
+  @override
+  String get editProfile => 'تعديل البيانات';
+
+  @override
+  String get upDate => 'تحديث';
+
+  @override
+  String get change => 'تغير';
 }

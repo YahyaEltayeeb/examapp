@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:examapp/core/l10n/translation/app_localizations.dart';
+import 'package:examapp/core/route/app_routes.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/theme/AppStyles.dart';
@@ -27,32 +28,24 @@ class _RememberMeWidgetState extends State<RememberMeWidget> {
               _isChecked = newValue!;
             });
           },
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
-          ),
-          side:  BorderSide(
-            color: AppColors.grey,
-            width: 2,
-          ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+          side: BorderSide(color: AppColors.grey, width: 2),
         ),
-         SizedBox(width: 2),
-         Text(
-          'Remember me',
-          style: AppStyles.regular14Text
-        ),
+        SizedBox(width: 2),
+        Text('Remember me', style: AppStyles.regular14Text),
         Spacer(),
-        InkWell(
-          onTap: (){},
+        TextButton(
+          onPressed: () {
+            Navigator.pushNamed(context, AppRoutes.forgetPassword);
+          },
           child: Text(
-              'Forget password ? ',
-              style: AppStyles.regular14Text.copyWith(
-                decoration:  TextDecoration.underline,
-                decorationColor: Colors.black,
-                decorationThickness: 1.2,
-              )
+            '${AppLocalizations.of(context)!.forgetPassword} ?',
+            style: AppStyles.regular14Text.copyWith(
+              decorationColor: Colors.black,
+              decorationThickness: 1.2,
+            ),
           ),
         ),
-
       ],
     );
   }

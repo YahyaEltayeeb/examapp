@@ -9,7 +9,7 @@ class CustomButton extends StatelessWidget {
   final TextStyle? textStyle;
   final Function onButtonClicked;
 
-  CustomButton({
+  const CustomButton({super.key, 
     required this.text,
     this.buttonColor,
     this.prefixButtonIcon,

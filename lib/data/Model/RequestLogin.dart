@@ -4,9 +4,9 @@ part 'RequestLogin.g.dart';
 
 @JsonSerializable()
 class RequestLoginDTO {
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   final String? email;
-  @JsonKey(name: "password")
+  @JsonKey(name: 'password')
   final String? password;
 
   RequestLoginDTO ({

@@ -66,5 +66,8 @@
   "guideline_check_answers": "راجع جميع إجاباتك بعناية قبل الإرسال",
   "high_level": "المستوى العالي",
   "instructions": "التعليمات",
-  "start":"ابدا"
+  "start":"ابدا",
+  "editProfile":"تعديل البيانات",
+  "upDate":"تحديث",
+  "change":"تغير"
 }

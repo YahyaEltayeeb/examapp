@@ -1,12 +1,20 @@
-abstract class VerifyCodeState {}
-
-class VerifyCodeInitial extends VerifyCodeState {}
-
-class VerifyCodeError extends VerifyCodeState {
-  String messageError;
-  VerifyCodeError(this.messageError);
+abstract class VerifyCodeState {
+  const VerifyCodeState();
 }
 
-class VerifyCodeSuccess extends VerifyCodeState {}
+class VerifyCodeInitial extends VerifyCodeState {
+  const VerifyCodeInitial();
+}
 
-class VerifyCodeLoadding extends VerifyCodeState {}
+class VerifyCodeLoading extends VerifyCodeState {
+  const VerifyCodeLoading();
+}
+
+class VerifyCodeSuccess extends VerifyCodeState {
+  const VerifyCodeSuccess();
+}
+
+class VerifyCodeError extends VerifyCodeState {
+  final String messageError;
+  const VerifyCodeError(this.messageError);
+}

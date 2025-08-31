@@ -7,11 +7,11 @@ part 'ResponseLogin.g.dart';
 
 @JsonSerializable()
 class ResponseLoginDTO {
-  @JsonKey(name: "message")
+  @JsonKey(name: 'message')
   final String? message;
-  @JsonKey(name: "token")
+  @JsonKey(name: 'token')
   final String? token;
-  @JsonKey(name: "user")
+  @JsonKey(name: 'user')
   final UserDTO? user;
   ResponseLoginDTO ({
     this.message,

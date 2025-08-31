@@ -227,24 +227,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
 
                       FilledButton(
-                        onPressed: () {
-                          if (formkey.currentState!.validate()) {
-                            context.read<SignUpCubit>().signUp(
-                              UserRequest(
-                                username: userNameController.text,
-                                rePassword: rePasswordController.text,
-                                firstName: firstNameController.text,
-                                lastName: lastNameController.text,
-                                email: emailController.text,
-                                password: passwordController.text,
-                                phone: phoneNumberController.text,
-                              ),
-                            );
-                          }
-                        },
+                        onPressed: state is SignUpLoadding
+                            ? null
+                            : () {
+                                if (formkey.currentState!.validate()) {
+                                  context.read<SignUpCubit>().signUp(
+                                    UserRequest(
+                                      username: userNameController.text,
+                                      rePassword: rePasswordController.text,
+                                      firstName: firstNameController.text,
+                                      lastName: lastNameController.text,
+                                      email: emailController.text,
+                                      password: passwordController.text,
+                                      phone: phoneNumberController.text,
+                                    ),
+                                  );
+                                }
+                              },
                         child: Text(
                           AppLocalizations.of(context)!.signUp,
-                          style: TextStyle(color: Colors.white),
+                          style: Theme.of(
+                            context,
+                          ).textTheme.bodyMedium!.copyWith(color: Colors.white),
                         ),
                       ),
 

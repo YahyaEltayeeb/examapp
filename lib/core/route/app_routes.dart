@@ -2,6 +2,7 @@ abstract class AppRoutes {
   static const String signUp = '/signUp';
   static const String logIn='/logIn';
   static const String forgetPassword='/forgetPassword';
+  static const String resetPassword='/resetPassword';
   static const String otp='/otp';
   static const String home='/home';
   static const String examById='/examById';
@@ -11,5 +12,7 @@ abstract class AppRoutes {
   static const String homeInitial='/homeInitial';
   static const String resultQuestion='/resultQuestion';
   static const String examBySub='/examBySub';
+  static const String editProfile='/editProfile';
+  static const String changePassword='/changePassword';
   
 }

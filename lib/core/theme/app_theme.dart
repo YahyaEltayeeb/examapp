@@ -17,8 +17,9 @@ abstract class AppTheme {
         ),
       ),
       colorScheme: colorScheme,
+      
       filledButtonTheme: FilledButtonThemeData(
-        style: ElevatedButton.styleFrom(foregroundColor: colorScheme.primary),
+        style: ElevatedButton.styleFrom(disabledBackgroundColor: AppColors.grey,foregroundColor: colorScheme.primary),
       ),
       textTheme: TextTheme(
         titleMedium: TextStyle(

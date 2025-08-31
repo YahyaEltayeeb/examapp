@@ -1,5 +1,5 @@
 class ResetPasswordRequest {
   String email;
   String newPassword;
-  ResetPasswordRequest(this.email, this.newPassword);
+  ResetPasswordRequest({required this.email, required this.newPassword});
 }

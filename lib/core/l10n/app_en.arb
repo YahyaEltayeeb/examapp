@@ -67,5 +67,8 @@
   "guideline_check_answers": "Check all your answers carefully before you submit",
   "high_level": "High level",
   "instructions": "Instructions",
-  "start":"Start"
+  "start":"Start",
+  "editProfile":"Edit Profile",
+  "upDate":"Update",
+  "change":"Change"
 }

@@ -43,12 +43,12 @@ class ForgetPasswordScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                     AppLocalizations.of(context)!.forgetPassword
-                     , style: Theme.of(context).textTheme.titleMedium,
+                      AppLocalizations.of(context)!.forgetPassword,
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
 
                     Text(
-                       AppLocalizations.of(context)!.enterEmailForgetPassword,
+                      AppLocalizations.of(context)!.enterEmailForgetPassword,
                       textAlign: TextAlign.center,
 
                       style: Theme.of(context).textTheme.bodySmall,
@@ -58,7 +58,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                       controller: forgetPasswordController,
                       hintText: AppLocalizations.of(context)!.enterEmail,
                       helperText: '',
-                      labelText:  AppLocalizations.of(context)!.email,
+                      labelText: AppLocalizations.of(context)!.email,
                     ),
 
                     SizedBox(
@@ -66,18 +66,20 @@ class ForgetPasswordScreen extends StatelessWidget {
                       height: 40,
                       child: FilledButton(
                         style: ElevatedButton.styleFrom(),
-                        onPressed: () {
-                          context.read<ForgetPasswordCubit>().forgetPassword(
-                            ForgetPasswordRequest(
-                              email: forgetPasswordController.text,
-                            ),
-                          );
-                        },
+                        onPressed: state is ForgetPasswordLoadding
+                            ? null
+                            : () {
+                                context
+                                    .read<ForgetPasswordCubit>()
+                                    .forgetPassword(
+                                      ForgetPasswordRequest(
+                                        email: forgetPasswordController.text,
+                                      ),
+                                    );
+                              },
                         child: Text(
                           AppLocalizations.of(context)!.continueButton,
-                          style:
-                              
-                              Theme.of(context).textTheme.labelLarge,
+                          style: Theme.of(context).textTheme.labelLarge,
                         ),
                       ),
                     ),

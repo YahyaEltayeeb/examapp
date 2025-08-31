@@ -6,23 +6,23 @@ part 'UserDto.g.dart';
 
 @JsonSerializable()
 class UserDTO {
-  @JsonKey(name: "_id")
+  @JsonKey(name: '_id')
   final String? Id;
-  @JsonKey(name: "username")
+  @JsonKey(name: 'username')
   final String? username;
-  @JsonKey(name: "firstName")
+  @JsonKey(name: 'firstName')
   final String? firstName;
-  @JsonKey(name: "lastName")
+  @JsonKey(name: 'lastName')
   final String? lastName;
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   final String? email;
-  @JsonKey(name: "phone")
+  @JsonKey(name: 'phone')
   final String? phone;
-  @JsonKey(name: "role")
+  @JsonKey(name: 'role')
   final String? role;
-  @JsonKey(name: "isVerified")
+  @JsonKey(name: 'isVerified')
   final bool? isVerified;
-  @JsonKey(name: "createdAt")
+  @JsonKey(name: 'createdAt')
   final String? createdAt;
 
   UserDTO ({

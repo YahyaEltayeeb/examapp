@@ -23,7 +23,15 @@ class ExamsByIdScreen extends StatelessWidget {
     final id = arguments[ArgumentsValue.idArgument] as String;
     final title = arguments[ArgumentsValue.titleArgument] as String;
     return Scaffold(
-      appBar: AppBar(title: Text(title), automaticallyImplyLeading: true),
+      appBar: AppBar(
+        title: Text(title),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushNamed(context, AppRoutes.homeInitial);
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
+      ),
       body: BlocProvider(
         create: (_) => getIt<ExamByIdBloc>()..add(GetExamsByIdEvent(id)),
         child: Expanded(
@@ -31,7 +39,8 @@ class ExamsByIdScreen extends StatelessWidget {
             builder: (context, state) {
               if (state.isLoadding == true) {
                 return LoaddingWidget();
-              }  if (state.errorMessageId.isNotEmpty) {
+              }
+              if (state.errorMessageId.isNotEmpty) {
                 return Center(child: Text(state.errorMessageId));
               }
 
@@ -46,7 +55,8 @@ class ExamsByIdScreen extends StatelessWidget {
                             context,
                             AppRoutes.examBySub,
                             arguments: {
-                            ArgumentsValue.examSub:state.examsById[index].subject
+                              ArgumentsValue.examSub:
+                                  state.examsById[index].subject,
                             },
                           );
                         },

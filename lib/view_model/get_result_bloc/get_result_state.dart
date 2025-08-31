@@ -17,7 +17,7 @@ class GetExamResultState {
     String? error,
   }) {
     return GetExamResultState(
-      isLadding: isLoadding ?? this.isLadding,
+      isLadding: isLoadding ?? isLadding,
       examResult: examResult ?? this.examResult,
       error: error ?? this.error,
     );

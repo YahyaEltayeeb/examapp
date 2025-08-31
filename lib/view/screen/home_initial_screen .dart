@@ -1,18 +1,18 @@
 import 'package:examapp/core/l10n/translation/app_localizations.dart';
+import 'package:examapp/view/screen/edit_profile_screen.dart';
 import 'package:examapp/view/screen/home_screen.dart';
-import 'package:examapp/view/screen/profile_screen.dart';
 import 'package:examapp/view/screen/result_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeInitialScreen extends StatefulWidget {
-  HomeInitialScreen({super.key});
+  const HomeInitialScreen({super.key});
 
   @override
   State<HomeInitialScreen> createState() => _HomeInitialScreenState();
 }
 
 class _HomeInitialScreenState extends State<HomeInitialScreen> {
-  final List<Widget> _screens = [HomeScreen(), ResultScreen(),ProfileScreen()];
+  final List<Widget> _screens = [HomeScreen(), ResultScreen(),EditProfileScreen()];
 
   int _currentInex = 0;
 
