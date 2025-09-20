@@ -88,6 +88,12 @@ Launch the application on your connected device or emulator:
 ```sh
 flutter run
  ```
+## 🎥 Demo
+
+<a href="https://drive.google.com/file/d/1XLXKXxQ42stgQxa752_I5x5aO7k90bis/view?usp=sharing" target="_blank">
+  <img src="https://img.shields.io/badge/Watch%20Demo-Click%20Here-blue?style=for-the-badge" alt="Demo Link"/>
+</a>
+
 ### Screenshots
 
 <div align="center">
