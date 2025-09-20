@@ -523,6 +523,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Change'**
   String get change;
+
+  /// No description provided for @login_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Login successfully'**
+  String get login_successfully;
 }
 
 class _AppLocalizationsDelegate

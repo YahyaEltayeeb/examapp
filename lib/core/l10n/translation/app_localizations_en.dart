@@ -227,4 +227,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get change => 'Change';
+
+  @override
+  String get login_successfully => 'Login successfully';
 }

@@ -30,12 +30,17 @@ class _LoginScreenState extends State<LoginScreen> {
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
           if (state is LoginSuccess) {
+             ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(AppLocalizations.of(context)!.login_successfully),
+                backgroundColor: AppColors.green
+              ));
             Navigator.pushNamed(context, AppRoutes.homeInitial);
           } else if (state is LoginError) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(state.message),
-                backgroundColor: Colors.red,
+                backgroundColor:AppColors.red,
               ),
               snackBarAnimationStyle: AnimationStyle(curve: Curves.decelerate),
             );

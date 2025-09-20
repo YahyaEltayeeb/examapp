@@ -70,5 +70,6 @@
   "start":"Start",
   "editProfile":"Edit Profile",
   "upDate":"Update",
-  "change":"Change"
+  "change":"Change",
+  "login_successfully":"Login successfully"
 }

@@ -11,9 +11,14 @@ import 'package:examapp/view_model/get_result_bloc/get_result_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ResultScreen extends StatelessWidget {
+class ResultScreen extends StatefulWidget {
   const ResultScreen({super.key});
 
+  @override
+  State<ResultScreen> createState() => _ResultScreenState();
+}
+
+class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

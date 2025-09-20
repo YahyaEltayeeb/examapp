@@ -225,4 +225,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get change => 'تغير';
+
+  @override
+  String get login_successfully => 'Login successfully';
 }

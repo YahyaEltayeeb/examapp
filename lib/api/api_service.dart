@@ -20,7 +20,6 @@ import 'package:examapp/core/values/api_end_point.dart';
 import 'package:examapp/data/Model/RequestLogin.dart';
 import 'package:examapp/data/Model/ResponseLogin.dart';
 import 'package:injectable/injectable.dart';
-import 'package:retrofit/http.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'api_service.g.dart';
@@ -39,7 +38,9 @@ abstract class ApiServices {
   );
 
   @POST(ApiEndPoint.verifyCode)
-  Future<VerifyCodeResponseDto> verifyCode(@Body() VerifyCodeRequestDto verifyCodeRequestDto);
+  Future<VerifyCodeResponseDto> verifyCode(
+    @Body() VerifyCodeRequestDto verifyCodeRequestDto,
+  );
 
   @PUT(ApiEndPoint.resetPassword)
   Future<ResetPasswordResponceDto> resetPassword(
