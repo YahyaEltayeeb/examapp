@@ -1,16 +1,89 @@
-# examapp
+# ExamApp
 
-A new Flutter project.
+[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/YahyaEltayeeb/examapp)
+
+ExamApp is a cross-platform online examination application built with Flutter. This project serves as a starting point, featuring a clean architectural structure, dependency injection, and localization support for both English and Arabic.
+
+## Features
+
+- **Cross-Platform:** Single codebase for Android, iOS, Web, Windows, macOS, and Linux.
+- **Clean Architecture:** Organized code with a clear separation between core logic, UI (view), and services.
+- **Localization (i18n):** Pre-configured for English and Arabic languages using the `intl` package.
+- **Custom Theming:** Includes a predefined color palette and theme for a consistent user interface.
+- **Routing:** A centralized system (`Routes.generateRoutes`) manages navigation throughout the app.
+- **Dependency Injection:** Utilizes `get_it` and `injectable` for managing dependencies and decoupling components.
+- **Networking Ready:** Integrated with `retrofit` and `dio` for making type-safe API calls.
+
+## Project Structure
+
+The project's `lib` directory is organized to promote a clean and scalable architecture:
+
+```
+lib/
+├── core/
+│   ├── l10n/                  
+│   │   └── app_localizations.dart
+│   ├── route/                 
+│   │   └── app_routes.dart
+│   └── theme/                 
+│       ├── app_colors.dart
+│       └── app_theme.dart
+├── view/
+│   ├── auth/
+│   │   ├── login_screen.dart
+│   │   ├── signin_screen.dart
+│   │   ├── forget_password_screen.dart
+│   │   └── reset_password_screen.dart
+│   ├── home/
+│   │   └── home_screen.dart
+│   ├── exam/
+│   │   ├── exam_by_id_screen.dart
+│   │   ├── exam_by_subject_screen.dart
+│   │   ├── question_screen.dart
+│   │   ├── score_screen.dart
+│   │   ├── result_screen.dart
+│   │   └── result_question_screen.dart
+├── widgets/                          
+│   ├── custom_button.dart
+│   └── custom_text_field.dart
+├── models/                           
+│   ├── user_model.dart
+│   ├── exam_model.dart
+│   └── question_model.dart
+├── services/                         
+│   └── auth_service.dart
+└── main.dart
+
+```
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get a local copy up and running, follow these simple steps.
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Ensure you have the Flutter SDK installed on your machine. For installation instructions, see the [official Flutter documentation](https://docs.flutter.dev/get-started/install).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Installation & Setup
+
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/YahyaEltayeeb/examapp.git
+    ```
+2.  **Navigate to the project directory:**
+    ```sh
+    cd examapp
+    ```
+3.  **Install dependencies:**
+    ```sh
+    flutter pub get
+    ```
+4. **Generate necessary code (for dependency injection and localization):**
+    ```sh
+    flutter pub run build_runner build
+    ```
+### Running the Application
+
+Launch the application on your connected device or emulator:
+```sh
+flutter run
