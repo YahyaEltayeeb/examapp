@@ -87,3 +87,30 @@ Ensure you have the Flutter SDK installed on your machine. For installation inst
 Launch the application on your connected device or emulator:
 ```sh
 flutter run
+ ```
+### Screenshots
+
+<div align="center">
+
+<img src="https://github.com/user-attachments/assets/42027014-24e7-4acf-b5b2-61011aa972eb" alt="SignUp" width="200px" style="margin-right:10px"/>
+<img src="https://github.com/user-attachments/assets/6c70270a-734b-4b18-9285-0c5e3d2afbab" alt="Login" width="200px" style="margin-right:10px"/>
+<img src="https://github.com/user-attachments/assets/7172037f-ca35-4ae5-88df-75349b5fc53a" alt="Home" width="200px" style="margin-right:10px"/>
+<img src="https://github.com/user-attachments/assets/77a7808b-ef0b-43b1-92ef-3b8927137ef3" alt="Shocce Quiz" width="200px"/>
+
+</div>
+
+<div align="center" style="margin-top:10px">
+
+<img src="https://github.com/user-attachments/assets/d4d2b37f-adf6-4799-bb1a-9aec2f90ee39" alt="Start Quiz" width="200px" style="margin-right:10px"/>
+<img src="https://github.com/user-attachments/assets/480c9452-ad1c-4cae-a17a-4e2251894cef" alt="Question" width="200px" style="margin-right:10px"/>
+<img src="https://github.com/user-attachments/assets/d5597532-b91f-42eb-bfc0-3e6c2891f680" alt="Choice Answer" width="200px" style="margin-right:10px"/>
+<img src="https://github.com/user-attachments/assets/4684b6ab-c946-4eb0-bb71-4f8b4fdde341" alt="Result" width="200px"/>
+
+</div>
+
+<div align="center" style="margin-top:10px">
+
+<img src="https://github.com/user-attachments/assets/4ad9c387-825c-49e1-a6d3-124590f02ce0" alt="Answer" width="200px" style="margin-right:10px"/>
+<img src="https://github.com/user-attachments/assets/6a065959-40cb-49a6-b9a5-b908c074fba1" alt="Profile" width="200px"/>
+
+</div>
